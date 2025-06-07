@@ -1,1 +1,3148 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio profesional de desarrollo web - Desarrollador Full Stack especializado en crear experiencias digitales excepcionales. Descubre mis proyectos, habilidades y experiencia.">
+    <meta name="keywords" content="desarrollador web, full stack, portfolio, desarrollo web, proyectos, programador, frontend, backend, react, nodejs, javascript, html, css, mongo, figma, python, docker, aws, laravel, git, vue, angular">
+    <meta name="author" content="Tu Nombre">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tu Nombre | Desarrollador Web Full Stack">
+    <meta property="og:description" content="Descubre mis mejores proyectos, habilidades y experiencia como desarrollador web Full Stack.">
+    <meta property="og:image" content="https://tusitio.com/preview.jpg">
+    <meta property="og:url" content="https://tusitio.com/">
+    <meta property="og:site_name" content="Tu Nombre Portfolio">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tu Nombre | Desarrollador Web Full Stack">
+    <meta name="twitter:description" content="Descubre mis mejores proyectos, habilidades y experiencia como desarrollador web Full Stack.">
+    <meta name="twitter:image" content="https://tusitio.com/preview.jpg">
+    <meta name="twitter:site" content="@tuusuario">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Tu Nombre | Desarrollador Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --primary-light: #8a84ff;
+            --secondary: #ff6584;
+            --dark: #121212;
+            --dark-light: #1e1e1e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Efecto de fondo combinado */
+        .bg-combined {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        background: linear-gradient(-45deg, 
+            #121212 0%, 
+            #1a1a2e 50%, 
+            #0f3460 100%);
+        background-size: 400% 400%;
+        animation: gradient-bg 20s ease infinite;
+        }
+
+        .particles-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.3;
+        pointer-events: none;
+        }
+
+        .particle {
+        position: absolute;
+        background: var(--primary);
+        border-radius: 50%;
+        animation: float 15s infinite linear;
+        }
+
+        @keyframes gradient-bg {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+        }
+
+        @keyframes float {
+        0% { transform: translateY(0) rotate(0deg); }
+        100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+
+        /* Efecto Neon */
+        /* Versión más sutil */
+        .neon-text {
+            text-shadow: 0 0 5px var(--primary),
+                        0 0 10px var(--primary);
+            animation: neonGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes neonGlow {
+            from {
+                text-shadow: 0 0 2px var(--primary),
+                            0 0 5px var(--primary);
+            }
+            to {
+                text-shadow: 0 0 5px var(--primary),
+                            0 0 15px var(--primary);
+            }
+        }
+        /* Efecto cursor personalizado */
+        .custom-cursor {
+            position: fixed;
+            width: 35px;
+            height: 35px;
+            pointer-events: none;
+            transition: all 0.5s ease-out;
+            mix-blend-mode: difference;
+            z-index: 9999;
+            background-image: url('tux-linux-penguin.gif');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transform: translate(-150%, -150%);
+            filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Estilos generales */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+            animation: float-dot 3s ease-in-out infinite;
+        }
+
+        @keyframes float-dot {
+            0%, 100% {
+                transform: translateY(0);
+                box-shadow: 0 0 10px var(--primary),
+                           0 0 20px var(--primary);
+            }
+            50% {
+                transform: translateY(-5px);
+                box-shadow: 0 0 15px var(--primary),
+                           0 0 30px var(--primary);
+            }
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(108, 99, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(108, 99, 255, 0.1);
+        }
+
+        .btn-cv {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .btn-cv:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0; /* Ajustar padding */
+            background: rgba(18, 18, 18, 0.95); /* Fondo un poco más opaco */
+            backdrop-filter: blur(10px); /* Mantener el efecto blur */
+            transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+        }
+
+        header.scrolled {
+            padding: 15px 0; /* Padding reducido al hacer scroll */
+            background: rgba(18, 18, 18, 0.98); /* Fondo casi opaco al hacer scroll */
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2); /* Sombra sutil al hacer scroll */
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover i {
+            transform: rotate(15deg);
+        }
+
+        .logo span {
+            font-size: 1.5rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem; /* Espacio entre enlaces aumentado */
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8); /* Color de enlace por defecto, un poco transparente */
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease; /* Transición solo para el color */
+            padding-bottom: 5px; /* Espacio para el subrayado animado */
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; /* Posicionar en la parte inferior del padding */
+            left: 0;
+            width: 0; /* Inicialmente sin ancho */
+            height: 2px; /* Grosor del subrayado */
+            background: var(--primary); /* Color del subrayado */
+            transition: width 0.3s ease; /* Animación del ancho */
+        }
+
+        .nav-links a:hover {
+            color: var(--light); /* Color brillante al pasar el ratón */
+        }
+
+        .nav-links a:hover::after {
+            width: 100%; /* Cubre todo el ancho al pasar el ratón */
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem; /* Tamaño del icono de menú aumentado */
+            color: var(--light); /* Color del icono de menú */
+            transition: color 0.3s ease; /* Transición para el color */
+        }
+        
+        .menu-toggle:hover {
+            color: var(--primary); /* Color al pasar el ratón */
+        }
+        
+        /* Media query para menú responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark-light); /* Fondo para el menú desplegado */
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(108, 99, 255, 0.1) 0%, rgba(108, 99, 255, 0) 70%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-text h1 span {
+            color: var(--primary);
+        }
+
+        .hero-text .title {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            display: inline-block;
+            position: relative;
+        }
+
+        .hero-text .title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--gray);
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Añade esto para centrar verticalmente */
+            width: 100%; /* Asegura que ocupe todo el ancho disponible */
+        }
+
+        .profile-circle {
+            position: relative;
+            width: 100%;
+            max-width: 380px;
+            aspect-ratio: 1/1;
+            margin: 0 auto; /* Esto ya lo tienes, pero es correcto */
+            display: flex; /* Añade esto */
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            position: static;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .profile-icon {
+            font-size: 10rem;
+            z-index: 2;
+            color: var(--primary);
+            animation: pulse 2s ease-in-out infinite alternate;
+        }
+
+        .profile-circle::before {
+            content: '';
+            position: absolute;
+            width: 100%; /* Usa 100% en lugar de tamaño fijo */
+            height: 100%;
+            border-radius: 50%;
+            background: var(--dark-light);
+        }
+
+        /* Estilos para el contenedor de imagen */
+        .profile-image-container {
+            position: relative; /* Cambia de absolute a relative */
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            overflow: hidden;
+            z-index: 1;
+            border: 10px solid rgba(108, 99, 255, 0.2);
+            box-shadow: 
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                0 0 30px rgba(108, 99, 255, 0.3);
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            margin: 0 auto; /* Centra el contenedor */
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .profile-image.active {
+            opacity: 1;
+        }
+
+        /* Ajuste para el círculo de perfil */
+        .profile-circle {
+            position: relative;
+        }
+
+        .profile-icon {
+            position: relative;
+            z-index: 2;
+            display: none; /* Ocultamos el emoji si usamos imágenes */
+        }
+
+        /* Projects Section */
+        .projects {
+            background: var(--dark-light);
+        }
+
+        .project-featured-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        .project-featured-card {
+            display: flex;
+            flex-direction: row;
+            background: linear-gradient(120deg, rgba(108,99,255,0.10) 0%, rgba(255,101,132,0.08) 100%);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+            border: 1.5px solid rgba(108,99,255,0.13);
+            overflow: hidden;
+            transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s;
+            margin-bottom: 0.5rem;
+        }
+        .project-featured-card:hover {
+            transform: scale(1.025) translateY(-4px);
+            box-shadow: 0 16px 40px 0 rgba(108,99,255,0.18), 0 2px 8px 0 rgba(255,101,132,0.10);
+            border-color: var(--primary);
+        }
+        .project-media {
+            flex: 1.1;
+            min-width: 220px;
+            max-width: 340px;
+            background: rgba(30,30,46,0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .project-media img,
+        .project-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+            transition: transform 0.5s cubic-bezier(.4,2,.6,1);
+        }
+        .project-featured-card:hover .project-media img,
+        .project-featured-card:hover .project-media video {
+            transform: scale(1.06);
+        }
+        .project-info {
+            flex: 2;
+            padding: 2.2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .project-info h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.7rem;
+        }
+        .project-info p {
+            color: rgba(255,255,255,0.82);
+            font-size: 1.08rem;
+            margin-bottom: 1.3rem;
+        }
+        .project-links {
+            margin-top: auto;
+        }
+        @media (max-width: 900px) {
+            .project-featured-card,
+            .project-featured-card.reverse {
+                flex-direction: column;
+            }
+            .project-media {
+                max-width: 100%;
+                min-width: 100%;
+                height: 220px;
+            }
+            .project-info {
+                padding: 1.5rem 1.2rem 2rem 1.2rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .project-featured-list {
+                gap: 1.5rem;
+            }
+            .project-info h3 {
+                font-size: 1.18rem;
+            }
+            .project-info p {
+                font-size: 0.98rem;
+            }
+        }
+
+        /* Tools Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
+        }
+
+        .tool-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .tool-item:hover {
+            transform: translateY(-5px);
+            background: rgba(99, 112, 255, 0.05);
+            border-color: rgba(108, 99, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        } 
+
+        .tool-name {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Ultra Modern Social Nexus */
+        .social-nexus {
+            background: #0f0f15;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-nexus::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(108, 99, 255, 0.1) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .nexus-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nexus-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .nexus-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #6c63ff, #ff6584);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .nexus-title.glitch {
+            position: relative;
+        }
+
+        .nexus-title.glitch::before,
+        .nexus-title.glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #6c63ff, #ff6584);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nexus-title.glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff6584;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+
+        .nexus-title.glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #6c63ff;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim-2 2s infinite linear alternate-reverse;
+        }
+
+        .nexus-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .nexus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .nexus-card {
+            background: rgba(30, 30, 46, 0.5);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nexus-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .nexus-media {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .nexus-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .nexus-card:hover .nexus-media video {
+            transform: scale(1.05);
+        }
+
+        .nexus-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .nexus-logo svg {
+            width: 30px;
+            height: 30px;
+            fill: #1e1e2e;
+        }
+
+        .nexus-card:hover .nexus-logo {
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .nexus-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .nexus-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .nexus-content p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .nexus-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 25px;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .nexus-btn svg {
+            margin-left: 8px;
+            stroke: white;
+            stroke-width: 2;
+            fill: none;
+            transition: all 0.3s ease;
+        }
+
+        .nexus-btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .nexus-btn:hover svg {
+            transform: translateX(5px);
+        }
+
+        /* githut */
+        .githut-btn:hover {
+            color: #000000;
+            background: rgba(255,0,0,0.1);
+        }
+
+        /* Ajuste opcional para el icono de YouTube (más equilibrado) */
+        .fa-githut {
+            font-size: 1.15rem; /* Ligeramente más grande para compensar el espacio blanco del logo */
+            margin-left: 1px; /* Pequeño ajuste de centrado */
+        }
+
+        /* whatsapp */
+
+        .whatsapp-btn:hover {
+            color: #04a329;
+            background: rgba(255,0,0,0.1);
+        }
+
+        /* Ajuste opcional para el icono de YouTube (más equilibrado) */
+        .fa-whatsapp {
+            font-size: 1.15rem; /* Ligeramente más grande para compensar el espacio blanco del logo */
+            margin-left: 1px; /* Pequeño ajuste de centrado */
+        }
+        
+         /* Estilo específico para YouTube */
+        .youtube-btn:hover {
+            color: #FF0000;
+            background: rgba(255,0,0,0.1);
+        }
+
+
+        /* Ajuste opcional para el icono de YouTube (más equilibrado) */
+        .fa-youtube {
+            font-size: 1.15rem; /* Ligeramente más grande para compensar el espacio blanco del logo */
+            margin-left: 1px; /* Pequeño ajuste de centrado */
+        }
+
+         /* Estilo específico para instagram */
+         .instagram-btn:hover {
+            color: #b32d70;
+            background: rgba(255,0,0,0.1);
+        }
+
+        /* Ajuste opcional para el icono de YouTube (más equilibrado) */
+        .fa-instagram {
+            font-size: 1.15rem; /* Ligeramente más grande para compensar el espacio blanco del logo */
+            margin-left: 1px; /* Pequeño ajuste de centrado */
+        }
+
+        /* Estilos para los botones sociales minimalistas */
+        .social-mini-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .social-mini-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(5px);
+        }
+
+        .social-mini-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        .github-btn:hover {
+            color: var(--light);
+            background: rgba(0,0,0,0.3);
+        }
+
+        .linkedin-btn:hover {
+            color: #0077B5;
+            background: rgba(0,119,181,0.1);
+        }
+
+        /* Animations */
+        @keyframes glitch-anim-1 {
+            0% { clip: rect(32px, 9999px, 76px, 0); }
+            20% { clip: rect(8px, 9999px, 44px, 0); }
+            40% { clip: rect(46px, 9999px, 72px, 0); }
+            60% { clip: rect(62px, 9999px, 58px, 0); }
+            80% { clip: rect(12px, 9999px, 88px, 0); }
+            100% { clip: rect(28px, 9999px, 16px, 0); }
+        }
+
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(92px, 9999px, 98px, 0); }
+            20% { clip: rect(54px, 9999px, 66px, 0); }
+            40% { clip: rect(38px, 9999px, 82px, 0); }
+            60% { clip: rect(24px, 9999px, 18px, 0); }
+            80% { clip: rect(78px, 9999px, 42px, 0); }
+            100% { clip: rect(56px, 9999px, 94px, 0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .nexus-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nexus-title {
+                font-size: 2.5rem;
+            }
+            
+            .nexus-subtitle {
+                font-size: 1rem;
+            }
+            
+            .nexus-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nexus-title {
+                font-size: 2rem;
+            }
+            
+            .social-nexus {
+                padding: 80px 0;
+            }
+        }
+        
+
+        /* Contact Section */
+        .contact {
+            background: var(--dark-light);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            color: white;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            background: var(--dark);
+            border-top: 1px solid rgba(32, 15, 142, 0.05);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: var(--light);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Particles */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .profile-circle {
+            animation: float 8s ease-in-out infinite;
+        }
+
+
+        /* Video Play Interaction */
+        .hub-card .hub-video {
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .hub-card:hover .hub-video {
+            opacity: 1;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hub-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hub-title {
+                font-size: 2.5rem;
+            }
+            
+            .hub-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hub-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hub-title {
+                font-size: 2rem;
+            }
+            
+            .social-hub {
+                padding: 80px 0;
+            }
+        }
+
+        /* Experiencia Laboral Styles */
+        .experience {
+            background: var(--dark-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            position: relative;
+        }
+
+        .experience-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 2rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-color: rgba(108, 99, 255, 0.2);
+        }
+
+        .experience-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid rgba(108, 99, 255, 0.2);
+        }
+
+        .experience-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .experience-content h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-content h4 {
+            color: var(--light);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-achievements {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-achievements li {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .experience-achievements i {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .experience-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+        }
+
+        /* Formación Styles */
+        .education {
+            background: var(--dark);
+            position: relative;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-color: rgba(108, 99, 255, 0.2);
+        }
+
+        .education-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .education-icon i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .education-content h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-content h4 {
+            color: var(--light);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-description {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .education-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .experience-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .experience-image {
+                margin: 0 auto;
+            }
+
+            .experience-achievements li {
+                justify-content: center;
+            }
+
+            .experience-tech {
+                justify-content: center;
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Estilos para el Modal de Proyecto */
+        .project-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            overflow-y: auto;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-modal.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .modal-content {
+            position: relative;
+            background: var(--dark-light);
+            margin: 50px auto;
+            padding: 30px;
+            width: 90%;
+            max-width: 1000px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+
+        .project-modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: var(--light);
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .modal-close:hover {
+            color: var(--primary);
+            transform: rotate(90deg);
+        }
+
+        .modal-header {
+            margin-bottom: 30px;
+        }
+
+        .modal-header h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .modal-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        /* Carrusel de Imágenes */
+        .project-carousel {
+            position: relative;
+            margin: 30px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .carousel-btn {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-btn:hover {
+            background: var(--primary);
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-dot.active {
+            background: var(--primary);
+        }
+
+        /* Detalles del Proyecto */
+        .project-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .project-section {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .project-section h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .project-section ul {
+            list-style: none;
+        }
+
+        .project-section li {
+            color: var(--light);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .project-section li i {
+            color: var(--primary);
+        }
+
+        .project-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .project-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            color: var(--light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .project-link:hover {
+            background: rgba(108, 99, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .project-link i {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .project-details {
+                grid-template-columns: 1fr;
+            }
+
+            .carousel-slide img {
+                height: 300px;
+            }
+        }
+
+        /*------------------------------------*\
+        |  CSS para el efecto de ondas en el ícono del chatbot |
+        \*------------------------------------*/
+        @keyframes pulse-wave {
+            0% {
+                transform: translate(-50%, -50%) scale(0.1); /* Inicia muy pequeño y centrado */
+                opacity: 1; /* Completamente visible al inicio */
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(3); /* Se expande y se mantiene centrado */
+                opacity: 0; /* Se desvanece al final */
+            }
+        }
+
+        @keyframes subtle-pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1); /* Un pulso un poco más notorio */
+            }
+        }
+
+        /* Aplicar un pulso sutil al ícono principal */
+        .chatbox-title i {
+            animation: subtle-pulse 1.5s infinite ease-in-out; /* Animación continua */
+        }
+
+        /* Estilos para el contenedor del título (el círculo minimizado) */
+        .chatbox.minimized .chatbox-title {
+            position: relative; /* Necesario para el ::after */
+            overflow: visible; /* Asegura que la onda no se recorte */
+            /* otros estilos del chatbox.minimized .chatbox-title ya están definidos en chatbox.js */
+        }
+
+        /* Crear el efecto de onda con ::after solo cuando está minimizado */
+        .chatbox.minimized .chatbox-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%; /* Tamaño base de la onda (relativo al padre) */
+            height: 100%;
+            border-radius: 50%;
+            background-color: var(--primary); /* Color de la onda */
+            opacity: 0; /* Inicialmente invisible, la animación lo hace visible */
+            transform: translate(-50%, -50%); /* Centrar inicialmente */
+            animation: pulse-wave 2s infinite ease-out; /* Aplicar la animación de onda */
+            z-index: -1; /* Detrás del contenido del título */
+        }
+
+        /* Asegurar que el ícono principal esté sobre la onda */
+        .chatbox.minimized .chatbox-title i {
+             position: relative; /* Posicionamiento relativo */
+             z-index: 1; /* Asegurar que esté por encima del ::after */
+        }
+
+        /*------------------------------------*/
+        /* Fin del CSS de ondas             */
+        /*------------------------------------*/
+
+        /* Agregar estos estilos en la sección de estilos CSS */
+        .acknowledgments {
+            background: rgba(30, 30, 46, 0.7); /* Fondo oscuro más transparente para ver el fondo animado */
+            backdrop-filter: blur(5px); /* Un poco de desenfoque */
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            /* Eliminamos border y box-shadow si los hubiera */
+        }
+
+        .acknowledgments .section-title {
+            /* Asegurar que el título de sección se vea bien */
+            color: var(--light); /* Color claro para el título */
+        }
+
+        .acknowledgments-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: none; /* Asegurar que no haya borde */
+            box-shadow: none; /* Eliminar sombra */
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: none; /* Eliminar sombra al hacer hover */
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px; /* Mantener border-radius en la imagen */
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .acknowledgments-text p {
+                font-size: 1rem;
+            }
+            
+            .acknowledgments-gallery {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+            
+            .gallery-image {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Particles Background -->
+    <div class="particles">
+        <div class="particle" style="width: 10px; height: 10px; top: 20%; left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="width: 15px; height: 15px; top: 60%; left: 80%; animation-delay: 2s;"></div>
+        <div class="particle" style="width: 8px; height: 8px; top: 80%; left: 20%; animation-delay: 4s;"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-code"></i>
+                <span>dev { holaMundo: true }</span>
+            </a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#formacion">Formación</a></li>
+                <li><a href="#herramientas">Habilidades</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text fade-in">
+                    <h1 class="neon-text">Hola, soy <span>Italo Fabio Sinisi Q.</span></h1>
+                    <p class="title">FULL-STACK DEV & DATA ANALYST</p>
+                    <p>👨‍💻 Data Analyst con experiencia en Python, SQL, Power BI, Cloud (AWS/GCP) y APIs REST.
+                        Desarrollo dashboards, modelos predictivos y pipelines ETL para diversos sectores.
+                        Conocimientos en Linux, ciberseguridad y desarrollo web.</p>
+                    <div class="cta-buttons">
+                        <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+                        <a href="#contacto" class="btn btn-secondary">Contactar</a>
+                        <a href="CV2025@ItaloFabioSinisiQ.pdf" download="ItaloFabioSinisiQ_CV.pdf" class="btn btn-cv">
+                            <i class="fas fa-download"></i> Descargar CV
+                        </a>
+                        
+                        <!-- Agrega estos nuevos botones -->
+                        <div style="width: 100%; margin-top: 5px;"></div> <!-- Espaciador -->
+                        <a href="https://github.com/ItaloFabioSinisiQ" target="_blank" class="social-mini-btn github-btn" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/italo-sinisi-quintana?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B9FdbuApxQGu34h0mMDGdgQ%3D%3D" target="_blank" class="social-mini-btn linkedin-btn" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+
+                        </a>
+                        <a href="https://www.instagram.com/sinisiitalo?igsh=MTFicHllbXIxcmcyZg==" target="_blank" class="social-mini-btn instagram-btn" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="www.youtube.com/@Italo_Sinisi" target="_blank" class="social-mini-btn youtube-btn" title="YouTube">
+                            <i class="fab fa-youtube"></i>    
+            
+                        </a>
+                        <a href="https://wa.me/977170609" target="_blank" class="social-mini-btn whatsapp-btn" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div class="hero-image fade-in" style="transition-delay: 0.3s">
+                <div class="profile-circle">
+                    <div class="profile-image-container" id="profile-image-container">
+                        <!-- Las imágenes se cargarán dinámicamente aquí -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Custom Cursor -->
+     <div class="custom-cursor" style="left: 839px; top: 5px;"></div>
+     
+
+    <!-- Projects Section -->
+    <section id="proyectos" class="projects">
+        <div class="container">
+            <h2 class="section-title fade-in">Proyectos Destacados</h2>
+            <div class="project-featured-list">
+
+                <div class="project-featured-card fade-in reverse">
+                    <div class="project-media">
+                        <img src="Code to Speech/IA.png" alt="Proyecto 3">
+                    </div>
+                    <div class="project-info">
+                        <h3>Extension VSCode-my pronto</h3>
+                        <p>Extension VSCode-my pronto</p>
+                        <div class="project-links">
+                            <button class="btn btn-primary view-project" data-project="3">Ver Demo</button>
+                            <a href="#" class="btn btn-secondary">Código</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-featured-card fade-in">
+                    <div class="project-media">
+                        <img src="Análisis de Inflación/Screenshot 2025-06-02 165315.png" alt="Proyecto 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>Análisis de Inflación y Costo de Vida en Perú (2010–2025)</h3>
+                        <p>Este proyecto consiste en el análisis exhaustivo de la evolución de la inflación y el costo de vida en el Perú entre 2010 y 2025. Usando Python y herramientas de análisis de datos, se extrajo, limpió, estructuró y visualizó información proveniente de fuentes oficiales como el INEI, BCRP, ENAHO y el Banco Mundial.</p>
+                        <div class="project-links">
+                            <button class="btn btn-primary view-project" data-project="1">Ver Demo</button>
+                            <a href="#" class="btn btn-secondary">Código</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="project-featured-card fade-in reverse">
+                    <div class="project-media">
+                        <img src="ShortURL/url.png" alt="Proyecto 2">
+                    </div>
+                    <div class="project-info">
+                        <h3>Short URL</h3>
+                        <p>Un servicio moderno de acortamiento de URLs con generación de códigos QR, construido con Node.js, Express, MongoDB y React.</p>
+                        <div class="project-links">
+                            <button class="btn btn-primary view-project" data-project="2">Ver Demo</button>
+                            <a href="#" class="btn btn-secondary">Código</a>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <div class="project-featured-card fade-in reverse">
+                    <div class="project-media">
+                        <img src="MediaFetch/image.png" alt="Proyecto 4">
+                    </div>
+                    <div class="project-info">
+                        <h3>MediaFetch CLI</h3>
+                        <p>Herramienta de línea de comandos diseñada para descargar música, videos, listas de reproducción y álbumes completos desde plataformas como YouTube, Youtube Music, etc...</p>
+                        <div class="project-links">
+                            <button class="btn btn-primary view-project" data-project="4">Ver Demo</button>
+                            <a href="#" class="btn btn-secondary">Código</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-featured-card fade-in">
+                    <div class="project-media">
+                        <img src="PolybarWin11/icon.png" alt="Proyecto 5">
+                    </div>
+                    <div class="project-info">
+                        <h3>Polybar para Windows 11 Basico</h3>
+                        <p>Una barra de estado minimalista para Windows 11.</p>
+                        <div class="project-links">
+                            <button class="btn btn-primary view-project" data-project="5">Ver Demo</button>
+                            <a href="#" class="btn btn-secondary">Código</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-featured-card fade-in reverse">
+                    <div class="project-media">
+                        <img src="ActivityLogger/39_23.png" alt="Proyecto 6">
+                    </div>
+                    <div class="project-info">
+                        <h3>ActivityLogger</h3>
+                        <p>Este sistema de monitoreo captura y registra la actividad del usuario en tiempo real, incluyendo ventanas activas, contenido del portapapeles y pulsaciones de teclado. Los datos se almacenan localmente y se envían por correo electrónico de forma periódica.                            .</p>
+                        <div class="project-links">
+                            <button class="btn btn-primary view-project" data-project="6">Ver Demo</button>
+                            <a href="#" class="btn btn-secondary">Código</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-featured-card fade-in">
+                    <div class="project-media">
+                        <img src="TranscripcionYoutube/ChatGPT Image 6 jun 2025, 14_29_47.png" alt="Proyecto 7">
+                    </div>
+                    <div class="project-info">
+                        <h3>Transcripción y Análisis de Videos de YouTube</h3>
+                        <p>Una aplicación web moderna para transcribir, analizar y extraer insights de videos de YouTube
+                            utilizando IA.</p>
+                        <div class="project-links">
+                            <button class="btn btn-primary view-project" data-project="7">Ver Demo</button>
+                            <a href="#" class="btn btn-secondary">Código</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-featured-card fade-in reverse">
+                    <div class="project-media">
+                        <img src="Muy prontog" alt="Proyecto 8">
+                    </div>
+                    <div class="project-info">
+                        <h3>Próximamente</h3>
+                        <p>Próximamente</p>
+                        <div class="project-links">
+                            <button class="btn btn-primary view-project" data-project="8">Ver Demo</button>
+                            <a href="#" class="btn btn-secondary">Código</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-featured-card fade-in reverse">
+                    <div class="project-media">
+                        <img src="Muy pronto" alt="Proyecto 9">
+                    </div>
+                    <div class="project-info">
+                        <h3>Próximamente</h3>
+                        <p>Próximamente</p>
+                        <div class="project-links">
+                            <button class="btn btn-primary view-project" data-project="9">Ver Demo</button>
+                            <a href="#" class="btn btn-secondary">Código</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Proyecto -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-header">
+                <h2>Nombre del Proyecto</h2>
+                <p>Descripción detallada del proyecto</p>
+            </div>
+            
+            <div class="project-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-slide">
+                        <img src="IMG_20211223_213055.jpg" alt="Vista 1 del proyecto">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="ChatGPT Image 12 abr 2025, 18_00_23.png" alt="Vista 2 del proyecto">
+                    </div>
+                    <!-- Más slides según necesites -->
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="carousel-dots">
+                    <span class="carousel-dot active"></span>
+                    <span class="carousel-dot"></span>
+                    <!-- Más dots según necesites -->
+                </div>
+            </div>
+
+            <div class="project-details">
+                <div class="project-section">
+                    <h3><i class="fas fa-tasks"></i> Características Principales</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Reto 1: Descripción del reto y su solución</li>
+                        <li><i class="fas fa-check-circle"></i> Reto 2: Descripción del reto y su solución</li>
+                        <li><i class="fas fa-check-circle"></i> Reto 3: Descripción del reto y su solución</li>
+                    </ul>
+                </div>
+                <div class="project-section">
+                    <h3><i class="fas fa-code"></i> Tecnologías Utilizadas</h3>
+                    <ul>
+                        <li><i class="fab fa-react"></i> React.js</li>
+                        <li><i class="fab fa-html5"></i> Node.js</li>
+                        <li><i class="fas fa-file-excel"></i> MongoDB</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-links-grid">
+                <a href="#" class="project-link">
+                    <i class="fas fa-external-link-alt"></i>
+                    Ver Demo en Vivo
+                </a>
+                <a href="#" class="project-link">
+                    <i class="fab fa-github"></i>
+                    Ver Código
+                </a>
+                <a href="#" class="project-link">
+                    <i class="fas fa-file-alt"></i>
+                    Documentación
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tools Section -->
+    <section id="herramientas" class="tools">
+        <div class="container">
+            <h2 class="section-title fade-in">Habilidades y Tecnologías</h2>
+            <div class="tools-grid">
+             <!-- Frontend -->
+            <div class="tool-item fade-in" style="transition-delay: 0.1s">
+                <div class="tool-icon"><i class="fab fa-html5"></i></div>
+                <div class="tool-name">HTML5</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay: 0.2s">
+                <div class="tool-icon"><i class="fab fa-css3-alt"></i></div>
+                <div class="tool-name">CSS3</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay: 0.3s">
+                <div class="tool-icon"><i class="fab fa-js"></i></div>
+                <div class="tool-name">JavaScript</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay: 0.4s">
+                <div class="tool-icon"><i class="fab fa-react"></i></div>
+                <div class="tool-name">React</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay: 0.5s">
+                <div class="tool-icon"><i class="fas fa-code"></i></div>
+                <div class="tool-name">TypeScript</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay: 0.6s">
+                <div class="tool-icon"><i class="fas fa-mobile-alt"></i></div>
+                <div class="tool-name">Flutter</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay: 0.7s">
+                <div class="tool-icon"><i class="fab fa-figma"></i></div>
+                <div class="tool-name">Figma</div>
+            </div>
+
+            <!-- Backend -->
+            <div class="tool-item fade-in" style="transition-delay: 0.2s">
+                <div class="tool-icon"><i class="fab fa-node-js"></i></div>
+                <div class="tool-name">Node.js</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay: 0.3s">
+                <div class="tool-icon"><i class="fab fa-python"></i></div>
+                <div class="tool-name">Python</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay: 0.4s">
+                <div class="tool-icon"><i class="fas fa-cog"></i></div>
+                <div class="tool-name">Rust</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay: 0.5s">
+                <div class="tool-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="tool-name">Go</div>
+            </div>
+
+            <!-- Bases de Datos -->
+            <div class="tool-item fade-in" style="transition-delay: 0.6s">
+                <div class="tool-icon"><i class="fas fa-database"></i></div>
+                <div class="tool-name">MongoDB</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay:  0.7s">
+                <div class="tool-icon"><i class="fas fa-database"></i></div>
+                <div class="tool-name">PostgreSQL</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay:  0.8s">
+                <div class="tool-icon"><i class="fas fa-database"></i></div>
+                <div class="tool-name">MySQL</div>
+            </div>
+
+
+            <!-- DevOps & Cloud -->
+            <div class="tool-item fade-in" style="transition-delay: 0.3s">
+                <div class="tool-icon"><i class="fab fa-docker"></i></div>
+                <div class="tool-name">Docker</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay: 0.4s">
+                <div class="tool-icon"><i class="fas fa-ship"></i></div>
+                <div class="tool-name">Kubernetes</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay: 0.5s">
+                <div class="tool-icon"><i class="fab fa-aws"></i></div>
+                <div class="tool-name">AWS</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay: 0.6s">
+                <div class="tool-icon"><i class="fab fa-microsoft"></i></div>
+                <div class="tool-name">Azure</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay:  0.7s">
+                <div class="tool-icon"><i class="fab fa-google"></i></div>
+                <div class="tool-name">Google Cloud</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay: 0.8s">
+                <div class="tool-icon"><i class="fas fa-brain"></i></div>
+                <div class="tool-name">TensorFlow</div>
+            </div>
+
+            <!-- Linux & Servidores -->
+            <div class="tool-item fade-in" style="transition-delay: 0.9s">
+                <div class="tool-icon"><i class="fab fa-linux"></i></div>
+                <div class="tool-name">Linux</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay: 0.4s">
+                <div class="tool-icon"><i class="fab fa-ubuntu"></i></div>
+                <div class="tool-name">Ubuntu</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay: 0.5s">
+                <div class="tool-icon"><i class="fas fa-server"></i></div>
+                <div class="tool-name">Nginx</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay: 0.6s">
+                <div class="tool-icon"><i class="fas fa-feather-alt"></i></div>
+                <div class="tool-name">Apache</div>
+            </div>
+
+            <!-- Herramientas -->
+            <div class="tool-item fade-in" style="transition-delay:  0.7s">
+                <div class="tool-icon"><i class="fab fa-git-alt"></i></div>
+                <div class="tool-name">Git</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay: 0.8s">
+                <div class="tool-icon"><i class="fas fa-terminal"></i></div>
+                <div class="tool-name">Bash/Shell</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay: 0.9s">
+                <div class="tool-icon"><i class="fas fa-key"></i></div>
+                <div class="tool-name">SSH</div>
+            </div>
+            <div class="tool-item fade-in" style="transition-delay: 1.0s">
+                <div class="tool-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="tool-name">VPN</div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencia Laboral Section -->
+    <section id="experiencia" class="experience">
+        <div class="container">
+            <h2 class="section-title fade-in">Experiencia Laboral</h2>
+            <div class="experience-timeline">
+                <div class="experience-card fade-in">
+                    <div class="experience-image">
+                        <img src="imagenes/Ubycall-ad22c492.png" alt="Logo Empresa 1">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Analista De Datos Call Center</h3>
+                        <h4>UBYCALL
+                        </h4>
+                        <p class="experience-date">Febrero 2023 – - Presente</p>
+                        <ul class="experience-achievements">
+                            <li><i class="fas fa-check-circle"></i>Optimicé procesos del equipo de ventas mediante análisis de KPIs, impulsando eficiencia y resultados.</li>
+                            <li><i class="fas fa-check-circle"></i>Desarrollé un sistema de informes que identificó patrones en llamadas, mejorando la experiencia del usuario.</li>
+                            <li><i class="fas fa-check-circle"></i>Implementé dashboards visuales (Power BI/Excel) que redujeron tiempos de acción.</li>
+                        </ul>
+                        <div class="experience-tech">
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Excel</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Signal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card fade-in" style="transition-delay: 0.1s">
+                    <div class="experience-image">
+                        <img src="imagenes/wendys.png" alt="Logo Empresa 2">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Analista De Datos Call Center</h3>
+                        <h4>UBYCALL al servicio de Wendy's Salvador</h4>
+                        <p class="experience-date">febrero 2023 - enero 2025</p>
+                        <ul class="experience-achievements">
+                            <li><i class="fas fa-check-circle"></i> Reducción del 20% en Tiempos de Reportes.</li>
+                            <li><i class="fas fa-check-circle"></i> Analicé patrones de llamadas y capacité al equipo en técnicas basadas en datos.</li>
+                            <li><i class="fas fa-check-circle"></i> Creación de un Chatbot para Soporte Básico interno</li>
+                        </ul>
+                        <div class="experience-tech">
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Excel</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Signal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card fade-in" style="transition-delay: 0.1s">
+                    <div class="experience-image">
+                        <img src="imagenes/Pizza_Hut_international_logo_2014.svg.png" alt="Logo Empresa 2">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Analista de calidad call center</h3>
+                        <h4> UBYCALL al servicio de Pizza Hut Salvador</h4>
+                        <p class="experience-date">febrero 2023 - noviembre 2024</p>
+                        <ul class="experience-achievements">
+                            <li><i class="fas fa-check-circle"></i> Implementé auditorías aleatorias y feedback en tiempo real a agentes, identificando patrones de error y capacitando en comunicación efectiva.</li>
+                            <li><i class="fas fa-check-circle"></i> Analicé grabaciones de llamadas, detectando causas raíz de reclamos y creando guías de respuesta estandarizadas.</li>
+                            <li><i class="fas fa-check-circle"></i> Audité llamadas, garantizando que el equipo siguiera protocolos de calidad.</li>
+                        </ul>
+                        <div class="experience-tech">
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Excel</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Signal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card fade-in" style="transition-delay: 0.1s">
+                    <div class="experience-image">
+                        <img src="imagenes/image.png" alt="Logo Empresa 2">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Atención al Cliente</h3>
+                        <h4>Gea Peru al servicio de Claro Chile</h4>
+                        <p class="experience-date">Junio 2022 - julio 2024</p>
+                        <ul class="experience-achievements">
+                            <li><i class="fas fa-check-circle"></i> Implementé técnicas de escucha activa, reduciendo escalamientos innecesarios</li>
+                            <li><i class="fas fa-check-circle"></i> Optimicé scripts y flujos de llamadas, manteniendo calidad (CSAT >90%) mientras aceleraba atención.</li>
+                            <li><i class="fas fa-check-circle"></i> Lideré programa de feedback semanal con agentes, corrigiendo puntos débiles identificados en grabaciones</li>
+                        </ul>
+                        <div class="experience-tech">
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Excel</span>
+                            <span class="tech-tag">Signal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card fade-in" style="transition-delay: 0.1s">
+                    <div class="experience-image">
+                        <img src="imagenes/1200x630wa.png" alt="Logo Empresa 2">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Análisis Financiero</h3>
+                        <h4>Alfin Banco</h4>
+                        <p class="experience-date">Marzo 2022 - Diciembre 2022</p>
+                        <ul class="experience-achievements">
+                            <li><i class="fas fa-check-circle"></i> Desarrollado modelos de riesgo financiero en Excel que mejoraron la precisión en la
+                                evaluación de solicitudes de crédito, reduciendo el porcentaje de impagos .</li>
+                            <li><i class="fas fa-check-circle"></i>  Creé dashboards con alertas automáticas para métricas críticas, acelerando la toma de decisiones.</li>
+                            <li><i class="fas fa-check-circle"></i> Desarrollé un sistema que generaba mensajes personalizados para clientes, indicando montos preaprobados de crédito.</li>
+                        </ul>
+                        <div class="experience-tech">
+                            <span class="tech-tag">Excel</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card fade-in" style="transition-delay: 0.1s">
+                    <div class="experience-image">
+                        <img src="imagenes/gestin_inmobiliaria_pacifico_s_a_c_logo.jpeg" alt="Logo Empresa 2">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Asistente de Administración (Prácticas Pre-Profesionales)</h3>
+                        <h4>Gestión Inmobiliaria Pacífico </h4>
+                        <p class="experience-date">Mayo 2021 - marzo 2022</p>
+                        <ul class="experience-achievements">
+                            <li><i class="fas fa-check-circle"></i> Implementé mejoras en los procedimientos de trabajo que resultaron en una notable reducción en
+                                el tiempo dedicado a tareas administrativas.</li>
+                            <li><i class="fas fa-check-circle"></i>La reestructuración de bases de datos internas permitió un acceso más ágil a la información
+                                necesaria para la toma de decisiones, mejorando la productividad del equipo.
+                                </li>
+                            <li><i class="fas fa-check-circle"></i> Creé reportes visuales en Power BI que facilitaron la identificación de tendencias en los
+                                datos.</li>
+                        </ul>
+                        <div class="experience-tech">
+                            <span class="tech-tag">Excel</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card fade-in" style="transition-delay: 0.1s">
+                    <div class="experience-image">
+                        <img src="imagenes/vivienda.png" alt="Logo Empresa 2">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Asistente de Administración (Prácticas Pre-Profesionales)</h3>
+                        <h4>Fondo Mi Vivienda</h4>
+                        <p class="experience-date">Febrero 2019 - Diciembre 2021 </p>
+                        <ul class="experience-achievements">
+                            <li><i class="fas fa-check-circle"></i> Desarrollé un script en Python + Excel que calculaba el monto máximo aprobable según ingresos, deudas y score crediticio del cliente, generando un PDF personalizado en segundos.</li>
+                            <li><i class="fas fa-check-circle"></i> Automaticé emails/SMS con simuladores de cuotas.</li>
+                            <li><i class="fas fa-check-circle"></i>Construí un Power BI con el estado de trámites (aprobados, en revisión, rechazados), notificando al cliente por WhatsApp en cada etapa.</li>
+                        </ul>
+                        <div class="experience-tech">
+                            <span class="tech-tag">Excel</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Power BI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card fade-in" style="transition-delay: 0.1s">
+                    <div class="experience-image">
+                        <img src="imagenes/GAS.jpg" alt="Logo Empresa 2" >
+                    </div>
+                    <div class="experience-content">
+                        <h3>Asesor Comercial</h3>
+                        <h4>G&H GAS al servicio de CÁLIDDA</h4>
+                        <p class="experience-date">Febrero 2017 - febrero 2019 </p>
+                        <ul class="experience-achievements">
+                            <li><i class="fas fa-check-circle"></i> Introduje reconocimientos semanales basados en métricas de calidad, mejorando clima laboral.</li>
+                            <li><i class="fas fa-check-circle"></i> Diseñé checklist de calidad enfocado en errores recurrentes.</li>
+                        </ul>
+                        <div class="experience-tech">
+                            <span class="tech-tag">Excel</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formación Section -->
+    <section id="formacion" class="education">
+        <div class="container">
+            <h2 class="section-title fade-in">Formación & Certificaciones</h2>
+            <div class="education-grid">
+                <div class="education-card fade-in">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Egresado de la carrera de Administración </h3>
+                        <h4>Sencico</h4>
+                        <p class="education-date">2018 - 2021</p>
+                        <p class="education-description">Especialización en geston.</p>
+                        <div class="education-skills">
+                            <span class="skill-tag">Bases de Datos</span>
+                            <span class="skill-tag">Excel</span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="education-card fade-in" style="transition-delay: 0.1s">
+                    <div class="education-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Certificado en Programación Orientada a Objetos con Python</h3>
+                        <h4>EDteam</h4>
+                        <p class="education-date">2024</p>
+                        <p class="education-description">Domina las bases de Programación Orientada a Objetos con Python y crea un programa de administración de contactos en consola.</p>
+                        <div class="education-skills">
+                            <span class="skill-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-card fade-in" style="transition-delay: 0.1s">
+                    <div class="education-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Certificado en Git</h3>
+                        <h4>EDteam</h4>
+                        <p class="education-date">2024</p>
+                        <p class="education-description">Sistema de control de versiones.</p>
+                        <div class="education-skills">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-card fade-in" style="transition-delay: 0.1s">
+                    <div class="education-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Certificado en SQL</h3>
+                        <h4>W3schools</h4>
+                        <p class="education-date">2024</p>
+                        <p class="education-description">Base de Datos.</p>
+                        <div class="education-skills">
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-card fade-in" style="transition-delay: 0.1s">
+                    <div class="education-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Certificado en Power BI</h3>
+                        <h4>EDteam</h4>
+                        <p class="education-date">2024</p>
+                        <p class="education-description">Diseñando el reporte, Modelado de datos y creación de nueva información.</p>
+                        <div class="education-skills">
+                            <span class="skill-tag">Power BI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-card fade-in" style="transition-delay: 0.2s">
+                    <div class="education-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Patrones de diseño</h3>
+                        <h4>EDteam</h4>
+                        <p class="education-date">2022</p>
+                        <p class="education-description">Curso avanzado de React y patrones de diseño modernos.</p>
+                        <div class="education-skills">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Hooks</span>
+                            <span class="skill-tag">Redux</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="education-card fade-in" style="transition-delay: 0.1s">
+                    <div class="education-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Analisis de Datos</h3>
+                        <h4>Coursera</h4>
+                        <p class="education-date">2023</p>
+                        <p class="education-description">Extraer, procesar, visualizar y comunicar insights a partir de datos.</p>
+                        <div class="education-skills">
+                            <span class="skill-tag">Excel</span>
+                            <span class="skill-tag">R</span>
+                            <span class="skill-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">¡Trabajemos Juntos!</h2>
+            <p style="margin-bottom: 2rem; color: rgba(255, 255, 255, 0.7);" class="fade-in">¿Tienes un proyecto en mente? Me encantaría escuchar tus ideas.</p>
+            
+            <form id="contactForm" class="contact-form fade-in" style="transition-delay: 0.2s">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/ItaloFabioSinisiQ" aria-label="Visitar mi perfil de GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/italo-sinisi-quintana?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B9FdbuApxQGu34h0mMDGdgQ%3D%3D" target=" aria-label="Visitar mi perfil de LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/sinisiitalo?igsh=MTFicHllbXIxcmcyZg==" aria-label="Visitar mi perfil de Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="www.youtube.com/@Italo_Sinisi" target=" aria-label="Visitar mi canal de YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://wa.me/977170609" aria-label="Contactarme por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+
+            <p class="copyright">© 2025 Italo Fabio. Todos los derechos desreservados.</p>
+        </div>
+    </footer>
+
+    <!-- Agradecimientos Section -->
+    <section id="agradecimientos" class="acknowledgments">
+        <div class="container">
+            <h2 class="section-title fade-in">Agradecimientos</h2> <!-- Devolvemos el título de sección para que se vea fuera del footer -->
+            <div class="acknowledgments-content">
+                <div class="acknowledgments-text fade-in">
+                    <p>Agradezco profundamente a todas las personas que han sido parte de este viaje.</p>
+                    <p>Un especial reconocimiento a quienes me han desafiado a crecer, a quienes han compartido su conocimiento. Su influencia ha sido fundamental en mi desarrollo como desarrollador.</p>
+                </div>
+                <div class="acknowledgments-gallery fade-in">
+                    <!-- Aquí puedes agregar imágenes de personas o momentos significativos -->
+                    <div class="gallery-item">
+                        <img src="LEANDRO.png" alt="Mentor o colega" class="gallery-image">
+                        <div class="gallery-caption">Kebin Leandro</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="imagenes/images.jpeg" alt="Momento significativo" class="gallery-image">
+                        <div class="gallery-caption">Alejandro Taboada</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="imagenes/75323425-9ed9-4484-b072-18005273c806.jpg" alt="Equipo de trabajo" class="gallery-image">
+                        <div class="gallery-caption">Plataforma de education</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="chatbox.js"></script>
+    <script>
+        // Crea el fondo combinado
+        function createBackground() {
+            // 1. Gradiente animado
+            const gradientBg = document.createElement('div');
+            gradientBg.className = 'bg-combined';
+            
+            // 2. Contenedor de partículas
+            const particlesContainer = document.createElement('div');
+            particlesContainer.className = 'particles-container';
+            
+            // Agrégalos al inicio del body
+            document.body.prepend(gradientBg, particlesContainer);
+            
+            // Genera 30 partículas
+            for (let i = 0; i < 150; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Configuración aleatoria para cada partícula
+                const size = Math.random() * 8 + 3;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                
+                // Color aleatorio entre primario y secundario
+                particle.style.background = Math.random() > 0.5 
+                ? 'var(--primary)' 
+                : 'var(--secondary)';
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Ejecuta cuando cargue el DOM
+        document.addEventListener('DOMContentLoaded', createBackground);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+        
+        // Cursor personalizado
+        const cursor = document.querySelector('.custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        // ** URL de tu servidor backend para recibir envíos de formulario **
+        const backendFormSubmitURL = 'http://localhost:3000/submit-form'; // Asegúrate de que coincida con el endpoint en tu server.js
+
+        contactForm.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Evita que el formulario se envíe de la manera tradicional (recargando la página)
+
+            // Deshabilitar el botón y mostrar un indicador de carga (opcional, pero buena práctica)
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...'; // Requiere Font Awesome para el icono
+
+
+            // Capturar los datos del formulario
+            const formData = new FormData(contactForm);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            try {
+                // Enviar los datos al servidor backend usando fetch
+                const response = await fetch(backendFormSubmitURL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json' // Indicamos que el cuerpo es JSON
+                    },
+                    body: JSON.stringify(data) // Convertir el objeto de datos a JSON
+                });
+
+                if (!response.ok) {
+                     // Si el servidor backend devuelve un código de estado de error
+                     const errorText = await response.text(); // Intenta leer el cuerpo del error
+                     throw new Error(`Server error: ${response.status} - ${errorText}`);
+                }
+
+                // Asumimos éxito si la respuesta es OK (código 2xx)
+                console.log('Formulario enviado con éxito al backend:', response);
+
+                // Mostrar mensaje de éxito al usuario con la animación existente
+                 const successMessage = document.createElement('div');
+                successMessage.style.position = 'fixed';
+                successMessage.style.bottom = '30px';
+                successMessage.style.left = '50%';
+                successMessage.style.transform = 'translateX(-50%)';
+                successMessage.style.backgroundColor = '#4CAF50';
+                successMessage.style.color = 'white';
+                successMessage.style.padding = '15px 30px';
+                successMessage.style.borderRadius = '50px';
+                successMessage.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+                successMessage.style.zIndex = '1000';
+                successMessage.style.animation = 'fadeInUp 0.5s ease-out';
+                successMessage.innerHTML = '<i class="fas fa-check-circle"></i> ¡Mensaje enviado con éxito!';
+
+                document.body.appendChild(successMessage);
+
+                // Remove message after 3 seconds
+                setTimeout(() => {
+                    successMessage.style.animation = 'fadeOut 0.5s ease-out';
+                    setTimeout(() => successMessage.remove(), 500);
+                }, 3000);
+
+                contactForm.reset(); // Limpiar el formulario después del envío exitoso
+
+            } catch (error) {
+                console.error('Error al enviar el formulario al backend:', error);
+
+                // Mostrar mensaje de error al usuario con una animación similar
+                const errorMessage = document.createElement('div');
+                 errorMessage.style.position = 'fixed';
+                errorMessage.style.bottom = '30px';
+                errorMessage.style.left = '50%';
+                errorMessage.style.transform = 'translateX(-50%)';
+                errorMessage.style.backgroundColor = '#f44336'; // Color rojo para error
+                errorMessage.style.color = 'white';
+                errorMessage.style.padding = '15px 30px';
+                errorMessage.style.borderRadius = '50px';
+                errorMessage.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+                errorMessage.style.zIndex = '1000';
+                errorMessage.style.animation = 'fadeInUp 0.5s ease-out';
+                errorMessage.innerHTML = '<i class="fas fa-times-circle"></i> Hubo un error al enviar tu mensaje.'; // Icono de error
+
+                document.body.appendChild(errorMessage);
+
+                 // Remove message after 3 seconds
+                setTimeout(() => {
+                    errorMessage.style.animation = 'fadeOut 0.5s ease-out';
+                    setTimeout(() => errorMessage.remove(), 500);
+                }, 3000);
+
+
+            } finally {
+                // Restaurar el botón de envío
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+            }
+        });
+
+        // CV download button
+        const cvButton = document.querySelector('.btn-cv');
+        cvButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Show download notification
+            const notification = document.createElement('div');
+            notification.style.position = 'fixed';
+            notification.style.bottom = '30px';
+            notification.style.right = '30px';
+            notification.style.backgroundColor = '#4CAF50';
+            notification.style.color = 'white';
+            notification.style.padding = '15px 25px';
+            notification.style.borderRadius = '8px';
+            notification.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+            notification.style.zIndex = '1000';
+            notification.style.animation = 'fadeInUp 0.5s ease-out';
+            notification.innerHTML = '<i class="fas fa-download"></i> Descargando tu CV...';
+            
+            document.body.appendChild(notification);
+            
+            // Simulate download
+            setTimeout(() => {
+                notification.innerHTML = '<i class="fas fa-check-circle"></i> ¡CV descargado con éxito!';
+                
+                // Actually download the file
+                const link = document.createElement('a');
+                link.href = this.href;
+                link.download = this.getAttribute('download');
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                // Remove notification after 3 seconds
+                setTimeout(() => {
+                    notification.style.animation = 'fadeOut 0.5s ease-out';
+                    setTimeout(() => notification.remove(), 500);
+                }, 3000);
+            }, 1000);
+        });
+
+        // Rotación de imágenes en el perfil
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('profile-image-container');
+            
+            // Lista de imágenes (reemplaza con tus rutas)
+            const images = [
+                'imagenesPerfil/1.jpg',
+                'imagenesPerfil/2.jpg',
+
+
+
+               
+            ];
+            
+            // Precarga las imágenes
+            const preloadedImages = images.map(src => {
+                const img = new Image();
+                img.src = src;
+                return img;
+            });
+
+            // Crea elementos de imagen
+            images.forEach((src, index) => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = `Imagen de perfil ${index + 1}`;
+                img.classList.add('profile-image');
+                if(index === 0) img.classList.add('active');
+                container.appendChild(img);
+            });
+
+            // Lógica de rotación
+            let currentIndex = 0;
+            const imageElements = container.querySelectorAll('.profile-image');
+            
+            function rotateProfileImage() {
+                // Oculta la imagen actual
+                imageElements[currentIndex].classList.remove('active');
+                
+                // Calcula el siguiente índice
+                currentIndex = (currentIndex + 1) % images.length;
+                
+                // Muestra la siguiente imagen
+                imageElements[currentIndex].classList.add('active');
+            }
+
+            // Rota cada 4 segundos (4000ms)
+            setInterval(rotateProfileImage, 4000);
+        });
+
+        // Add animations for elements already in view on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroElements = document.querySelectorAll('.hero .fade-in');
+            heroElements.forEach((el, index) => {
+                el.style.transitionDelay = `${index * 0.1}s`;
+                el.classList.add('show');
+            });
+        });
+
+        // Funcionalidad del Modal de Proyecto
+        const modal = document.getElementById('projectModal');
+        const viewButtons = document.querySelectorAll('.view-project');
+        const closeButton = document.querySelector('.modal-close');
+
+        // Datos de ejemplo para los proyectos
+        const projectData = {
+            1: {
+                title: "Análisis de Inflación y Costo de Vida en Perú",
+                description: "Se recopilaron indicadores clave como el Índice de Precios al Consumidor (IPC), la Remuneración Mínima Vital (RMV), el costo de la canasta básica (alimentaria y total), el tipo de cambio y las tasas de pobreza monetaria y extrema. Además, se construyeron visualizaciones y análisis de correlación que muestran la evolución del poder adquisitivo, el impacto de la inflación en distintos rubros, y las desigualdades regionales en el Perú.",
+                images: [
+                    "Análisis de Inflación/analisis.gif",
+                    "Análisis de Inflación/Screenshot 2025-06-02 183813.png",
+
+                ],
+                challenges: [
+                    "Investigué el uso de la librería pdfplumber en Python para extraer datos tabulares de PDFs.",
+                    "Diseñé un script automatizado que recorre carpetas por año y extrae tablas clave, limpiando formatos porcentuales y columnas geográficas.",
+                    "Realicé una investigación profunda en fuentes como el INEI, BCRP, MIDIS, Banco Mundial y ENAHO"
+                ],
+                technologies: [
+                    { icon: "fab fa-python", name: "Python" },
+                    { icon: "fab fa-html5", name: "HTML5" },
+                    { icon: "fas fa-file-excel", name: "Excel" }
+                ],
+                links: {
+                    demo: "inflation_analysis_dashboard.html",
+                    code: "https://github.com/ItaloFabioSinisiQ/An-lisis-de-Inflaci-n-y-Costo-de-Vida-en-Per-2010-2025-.git",
+                    docs: "documentos/Documentación Técnica_ Dashboard de Análisis Económico Perú.pdf"
+                }
+            },
+            2: {
+                title: "Acortador de URLs con Código QR",
+                description: "Un servicio moderno de acortamiento de URLs con generación de códigos QR, construido con Node.js, Express, MongoDB y React.",
+                images: [
+                    "ShortURL/url11.gif",
+                    "ShortURL/Screenshot 2025-06-05 232503.png"
+                ],
+                challenges: [
+                    "Acortamiento de URLs - Convierte URLs largas en enlaces cortos y memorables",
+                    "Generación de códigos QR - Crea códigos QR automáticamente para cada URL",
+                    "Estadísticas de clics - Rastrea el número de visitas y fecha de último acceso",
+                    " Interfaz moderna - Diseño responsive con animaciones suaves",
+                    " Descarga de códigos QR - Guarda los códigos QR como imágenes",
+                    "Validación de URLs - Verifica que las URLs sean válidas antes de procesarlas",
+                    "Redirección automática - Redirige instantáneamente a la URL original"
+                ],
+                technologies: [
+                    { icon: "fas fa-database", name: "MongoDB" },
+                    { icon: "fab fa-react", name: "React.js" },
+                    { icon: "fas fa-server", name: "Express" }, 
+                    { icon: "fab fa-node-js", name: "Node.js" },
+                ],
+                links: {
+                    demo: "#",
+                    code: "https://github.com/ItaloFabioSinisiQ/Short-URL.git",
+                    docs: "ShortURL/url-short.pdf"
+                }
+            },
+            3: {
+                title: "Dashboard Analítico",
+                description: "Panel de control interactivo para visualización y análisis de datos en tiempo real. Incluye gráficos personalizables y exportación de reportes.",
+                images: [
+                    "IMG_20211223_213055.jpg",
+                    "ChatGPT Image 12 abr 2025, 18_00_23.png"
+                ],
+                challenges: [
+                    "Optimización de consultas para grandes volúmenes de datos",
+                    "Implementación de gráficos interactivos en tiempo real",
+                    "Desarrollo de sistema de alertas personalizables"
+                ],
+                technologies: [
+                    { icon: "fab fa-angular", name: "Angular" },
+                    { icon: "fab fa-node-js", name: "Node.js" },
+                    { icon: "fas fa-database", name: "MySQL" },
+                    { icon: "fab fa-aws", name: "AWS" }
+                ],
+                links: {
+                    demo: "#",
+                    code: "#",
+                    docs: "#"
+                }
+            },
+            4: {
+                title: "MediaFetch CLI",
+                description: "Es una herramienta de línea de comandos desarrollada en Python que permite descargar contenido de YouTube y YouTube Music de forma inteligente y automatizada. El script detecta automáticamente el tipo de contenido (música o video) y aplica la configuración óptima para cada caso.",
+                images: [
+                    "MediaFetch/pm3-2 ‐ Hecho con Clipchamp.gif",
+                    "MediaFetch/mp3.gif"
+                    
+                ],
+                challenges: [
+                    "Identifica automáticamente, música o video.",
+                    "Selecciona el mejor formato disponible.",
+                    "Procesamiento por lotes desde archivo de texto.",
+                    "Omite URLs ya procesadas.",
+                    "Supervisión continua de directorio",
+                    "Configuración centralizada y editable"
+                    
+
+                ],
+                technologies: [
+                    { icon: "fab fa-python", name: "Python" },
+                    { icon: "fas fa-terminal", name: "Bash" },,
+
+                ],
+                links: {
+                    demo: "#",
+                    code: "https://github.com/ItaloFabioSinisiQ/MediaFetch-CLI.git",
+                    docs: "documentos/descargamp3.pdf"
+                }
+            },
+            5: {
+                title: "PolybarWin11 simple",
+                description: "PolybarWin11 es una barra de estado personalizada para Windows 11 muy minimalista.",
+                images: [
+                    "PolybarWin11/poly.gif",
+                    "PolybarWin11/image.png"
+
+                ],
+                challenges: [
+                    "Interfaz transparente y siempre visible",
+                    "Accesos rápidos a aplicaciones populares",
+                    "Reloj central con fecha y hora",
+                    "Monitoreo del sistema en tiempo real"
+                ],
+                technologies: [
+                    { icon: "fab fa-python", name: "Python" }
+                ],
+                links: {
+                    demo: "#",
+                    code: "https://github.com/ItaloFabioSinisiQ/PolybarWin11.git",
+                    docs: "PolybarWin11/Polybar.pdf"
+                }
+            },
+            6: {
+                title: "ActivityLogger",
+                description: "Este sistema de monitoreo captura y registra la actividad del usuario en tiempo real, incluyendo ventanas activas, contenido del portapapeles y pulsaciones de teclado. Los datos se almacenan localmente y se envían por correo electrónico de forma periódica.",
+                images: [
+                    "ActivityLogger/0605.gif",
+                    "ActivityLogger/image.png"
+                ],
+                challenges: [
+                    "Monitoreo de Ventanas Activas.",
+                    "Monitoreo del Portapapeles.",
+                    "Categorización Automática.",
+                    "Detección de Tipos de Contenido."
+                     
+                ],
+                technologies: [
+               
+                    { icon: "fab fa-Bash/Shell", name: "<- .bat" },
+                    { icon: "fab fa-python", name: "Python" },
+
+                ],
+                links: {
+                    demo: "#",
+                    code: "https://github.com/ItaloFabioSinisiQ/ActivityLogger.git",
+                    docs: "ActivityLogger/Sistema de Monitoreo de Actividades.pdf"
+                }
+            },
+
+            7: {
+                title: "TranscripcionYoutube",
+                description: "Esta aplicación web permite transcribir y analizar videos de YouTube utilizando la API de YouTube y Gemini ,Claude, etc...",
+                images: [
+                    "TranscripcionYoutube/0606(1).gif",
+                    "TranscripcionYoutube/Screenshot 2025-06-06 142605.png"
+                ],
+                challenges: [
+                    "Transcripción automática de videos de YouTube",
+                    "Análisis del contenido utilizando Gemini",
+                    "Generación de archivos en formato Markdown y JSON",
+                    "Interfaz web amigable"
+                ],
+                technologies: [
+                    { icon: "fab fa-html5", name: "HTML5" },
+                    { icon: "fab fa-python", name: "Python" },
+    
+                ],
+                links: {
+                    demo: "#",
+                    code: "https://github.com/ItaloFabioSinisiQ/TranscripcionYoutube.git",
+                    docs: "TranscripcionYoutube/TranscripcionYoutube.pdf"
+                }
+            },
+
+            8: {
+                title: "App de Fitness",
+                description: "Aplicación de seguimiento de ejercicios y nutrición con IA personalizada. Incluye planificación de rutinas, seguimiento de progreso y comunidad de usuarios.",
+                images: [
+                    "ChatGPT Image 12 abr 2025, 18_00_23.png",
+                    "IMG_20211223_213055.jpg"
+                ],
+                challenges: [
+                    "Desarrollo de algoritmo de IA para recomendaciones personalizadas",
+                    "Implementación de sistema de seguimiento de ejercicios con cámara",
+                    "Creación de sistema de gamificación y recompensas"
+                ],
+                technologies: [
+                    { icon: "fab fa-react", name: "React Native" },
+                    { icon: "fab fa-python", name: "Python" },
+                    { icon: "fas fa-database", name: "MongoDB" },
+                    { icon: "fab fa-aws", name: "AWS" }
+                ],
+                links: {
+                    demo: "#",
+                    code: "#",
+                    docs: "#"
+                }
+            },
+        };
+
+        // Función para actualizar el contenido del modal
+        function updateModalContent(projectId) {
+            const project = projectData[projectId];
+            if (!project) return;
+
+            // Actualizar título y descripción
+            modal.querySelector('.modal-header h2').textContent = project.title;
+            modal.querySelector('.modal-header p').textContent = project.description;
+
+            // Actualizar carrusel
+            const carouselContainer = modal.querySelector('.carousel-container');
+            carouselContainer.innerHTML = project.images.map(img => `
+                <div class="carousel-slide">
+                    <img src="${img}" alt="Vista del proyecto">
+                </div>
+            `).join('');
+
+            // Actualizar dots
+            const dotsContainer = modal.querySelector('.carousel-dots');
+            dotsContainer.innerHTML = project.images.map((_, index) => `
+                <span class="carousel-dot ${index === 0 ? 'active' : ''}"></span>
+            `).join('');
+
+            // Actualizar retos
+            const challengesList = modal.querySelector('.project-section:first-child ul');
+            challengesList.innerHTML = project.challenges.map(challenge => `
+                <li><i class="fas fa-check-circle"></i> ${challenge}</li>
+            `).join('');
+
+            // Actualizar tecnologías
+            const techList = modal.querySelector('.project-section:last-child ul');
+            techList.innerHTML = project.technologies.map(tech => `
+                <li><i class="${tech.icon}"></i> ${tech.name}</li>
+            `).join('');
+
+            // Actualizar links
+            const linksGrid = modal.querySelector('.project-links-grid');
+            linksGrid.innerHTML = `
+                <a href="${project.links.demo}" class="project-link">
+                    <i class="fas fa-external-link-alt"></i>
+                    Ver Demo en Vivo
+                </a>
+                <a href="${project.links.code}" class="project-link">
+                    <i class="fab fa-github"></i>
+                    Ver Código
+                </a>
+                <a href="${project.links.docs}" class="project-link">
+                    <i class="fas fa-file-alt"></i>
+                    Documentación
+                </a>
+            `;
+        }
+
+        // Event Listeners para el modal
+        viewButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const projectId = button.dataset.project;
+                updateModalContent(projectId);
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeButton.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Funcionalidad del Carrusel
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const container = document.querySelector('.carousel-container');
+
+        function updateCarousel() {
+            container.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateCarousel();
+        }
+
+        // Event Listeners para el carrusel
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+            });
+        });
+
+        // Auto-play del carrusel
+        let carouselInterval = setInterval(nextSlide, 5000);
+
+        // Pausar auto-play al hover
+        const carousel = document.querySelector('.project-carousel');
+        carousel.addEventListener('mouseenter', () => clearInterval(carouselInterval));
+        carousel.addEventListener('mouseleave', () => {
+            carouselInterval = setInterval(nextSlide, 5000);
+        });
+    </script>
+</body>
+</html>
