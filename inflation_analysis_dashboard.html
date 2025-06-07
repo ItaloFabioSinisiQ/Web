@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Exploratorio: Inflación y Costo de Vida en Perú</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/papaparse/5.4.1/papaparse.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .dashboard {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .card h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+        
+        .large-chart {
+            height: 400px;
+        }
+        
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(52, 152, 219, 0.1);
+            border-radius: 8px;
+        }
+        
+        .metric-label {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .metric-value {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card h4 {
+            color: #3498db;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .stat-card .value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .analysis-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .analysis-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        .insight {
+            background: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .insight h4 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .warning {
+            background: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .positive {
+            background: rgba(39, 174, 96, 0.1);
+            border-left: 4px solid #27ae60;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        .btn.active {
+            background: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Análisis Exploratorio: Inflación y Costo de Vida</h1>
+            <p>Perú 2010-2024 | Datos del INEI y BCRP</p>
+        </div>
+        
+        <div class="summary-stats" id="summaryStats">
+            <!-- Los stats se llenarán dinámicamente -->
+        </div>
+        
+        <div class="dashboard">
+            <div class="card">
+                <h3>📈 Evolución del IPC (Inflación Anual)</h3>
+                <div class="chart-container">
+                    <canvas id="ipcChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>🛒 Evolución de la Canasta Básica</h3>
+                <div class="chart-container">
+                    <canvas id="canastaChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>💰 Remuneración Mínima Vital vs Canasta</h3>
+                <div class="chart-container">
+                    <canvas id="rmvCanastaChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>📊 Tasas de Pobreza</h3>
+                <div class="chart-container">
+                    <canvas id="pobrezaChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>💵 Tipo de Cambio USD/PEN</h3>
+                <div class="chart-container">
+                    <canvas id="tcChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>🏠 Distribución de Ingresos por Deciles (2023)</h3>
+                <div class="chart-container">
+                    <canvas id="decilesChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="analysis-section">
+            <h2>🔍 Análisis e Insights Clave</h2>
+            
+            <div class="insight warning">
+                <h4>🚨 Crisis Inflacionaria 2021-2022</h4>
+                <p>Se observa un pico inflacionario crítico con IPC de 6.4% en 2021 y 8.5% en 2022, el más alto del período analizado. Esto coincide con:</p>
+                <ul>
+                    <li>   Aumento significativo de la canasta básica: de S/378 a S/415 per cápita</li>
+                    <li>Crisis política y social nacional</li>
+                    <li>Efectos post-pandemia COVID-19</li>
+                </ul>
+            </div>
+            
+            <div class="insight positive">
+                <h4>✅ Recuperación y Estabilización</h4>
+                <p>Para 2023-2024 se observa una recuperación hacia niveles de inflación controlada (3.2% y 2.0% respectivamente), aunque la canasta básica se mantiene en niveles elevados (S/454 per cápita en 2024).</p>
+            </div>
+            
+            <div class="insight">
+                <h4>📊 Brecha RMV vs Costo de Vida</h4>
+                <p>La Remuneración Mínima Vital ha tenido ajustes significativos, pero existe una brecha persistente:</p>
+                <ul>
+                    <li>RMV 2025: S/1,130</li>
+                    <li>Canasta total per cápita 2024: S/454</li>
+                    <li>Para una familia de 4 personas: S/1,816 vs S/1,130 del salario mínimo</li>
+                </ul>
+            </div>
+            
+            <div class="insight warning">
+                <h4>⚠️ Impacto en la Pobreza</h4>
+                <p>Las tasas de pobreza muestran un patrón preocupante:</p>
+                <ul>
+                    <li>Reducción sostenida 2010-2019: de 30.8% a 20.2%</li>
+                    <li>Aumento dramático en 2020: 30.1% (pandemia)</li>
+                    <li>Persistencia elevada 2022-2023: 27.5% y 29.0%</li>
+                </ul>
+            </div>
+            
+            <div class="insight">
+                <h4>🌍 Factor Cambiario</h4>
+                <p>El tipo de cambio ha mostrado volatilidad moderada, manteniéndose en el rango 3.32-3.81 soles por dólar, lo que ha ayudado a contener presiones inflacionarias importadas.</p>
+            </div>
+            
+            <div class="insight">
+                <h4>💡 Desigualdad de Ingresos</h4>
+                <p>La distribución por deciles revela una marcada desigualdad:</p>
+                <ul>
+                    <li>Decil más bajo (D1): S/400 mensuales</li>
+                    <li>Decil más alto (D10): S/6,000 mensuales</li>
+                    <li>Ratio D10/D1: 15:1</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuración global de Chart.js
+        Chart.defaults.font.family = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+        Chart.defaults.font.size = 12;
+        Chart.defaults.color = '#2c3e50';
+        
+        // Datos del análisis
+        const data = {
+            ipc: [
+                {año: 2010, valor: 2.1}, {año: 2011, valor: 4.7}, {año: 2012, valor: 2.6},
+                {año: 2013, valor: 2.9}, {año: 2014, valor: 3.2}, {año: 2015, valor: 4.4},
+                {año: 2016, valor: 3.2}, {año: 2017, valor: 1.4}, {año: 2018, valor: 2.2},
+                {año: 2019, valor: 1.9}, {año: 2020, valor: 2.0}, {año: 2021, valor: 6.4},
+                {año: 2022, valor: 8.5}, {año: 2023, valor: 3.2}, {año: 2024, valor: 2.0}
+            ],
+            canasta: [
+                {año: 2010, alimentaria: 134, total: 260}, {año: 2011, alimentaria: 143, total: 272},
+                {año: 2012, alimentaria: 151, total: 284}, {año: 2013, alimentaria: 155, total: 292},
+                {año: 2014, alimentaria: 161, total: 303}, {año: 2015, alimentaria: 169, total: 315},
+                {año: 2016, alimentaria: 176, total: 328}, {año: 2017, alimentaria: 183, total: 338},
+                {año: 2018, alimentaria: 183, total: 344}, {año: 2019, alimentaria: 187, total: 352},
+                {año: 2020, alimentaria: 191, total: 360}, {año: 2021, alimentaria: 201, total: 378},
+                {año: 2022, alimentaria: 226, total: 415}, {año: 2023, alimentaria: 251, total: 446},
+                {año: 2024, alimentaria: 256, total: 454}
+            ],
+            rmv: [
+                {fecha: '2010', valor: 580}, {fecha: '2012', valor: 750}, 
+                {fecha: '2016', valor: 850}, {fecha: '2018', valor: 930},
+                {fecha: '2022', valor: 1025}, {fecha: '2025', valor: 1130}
+            ],
+            pobreza: [
+                {año: 2010, monetaria: 30.77, extrema: 7.63}, {año: 2011, monetaria: 27.82, extrema: 6.34},
+                {año: 2012, monetaria: 25.81, extrema: 6.01}, {año: 2013, monetaria: 23.91, extrema: 4.73},
+                {año: 2014, monetaria: 22.73, extrema: 4.28}, {año: 2015, monetaria: 21.77, extrema: 4.07},
+                {año: 2016, monetaria: 20.7}, {año: 2017, monetaria: 21.7}, {año: 2018, monetaria: 20.5},
+                {año: 2019, monetaria: 20.2}, {año: 2020, monetaria: 30.1}, {año: 2021, monetaria: 25.9},
+                {año: 2022, monetaria: 27.5, extrema: 5.0}, {año: 2023, monetaria: 29.0, extrema: 5.7}
+            ],
+            tipoCambio: [
+                {año: 2010, valor: 2.85}, {año: 2015, valor: 3.36}, {año: 2020, valor: 3.55},
+                {año: 2021, valor: 3.63}, {año: 2022, valor: 3.81}, {año: 2023, valor: 3.70}, {año: 2025, valor: 3.67}
+            ],
+            deciles2023: [400, 800, 1200, 1600, 2000, 2400, 2900, 3500, 4300, 6000]
+        };
+        
+        // Función para crear estadísticas resumen
+        function createSummaryStats() {
+            const statsContainer = document.getElementById('summaryStats');
+            
+            const ipcPromedio = data.ipc.reduce((sum, item) => sum + item.valor, 0) / data.ipc.length;
+            const ipcMax = Math.max(...data.ipc.map(item => item.valor));
+            const canastaActual = data.canasta[data.canasta.length - 1].total;
+            const pobrezaActual = data.pobreza[data.pobreza.length - 1].monetaria;
+            
+            const stats = [
+                {title: 'IPC Promedio 2010-2024', value: `${ipcPromedio.toFixed(1)}%`},
+                {title: 'Inflación Máxima', value: `${ipcMax}%`},
+                {title: 'Canasta Básica 2024', value: `S/ ${canastaActual}`},
+                {title: 'Pobreza Actual', value: `${pobrezaActual}%`},
+                {title: 'RMV Actual', value: 'S/ 1,130'},
+                {title: 'Tipo Cambio 2025', value: 'S/ 3.67'}
+            ];
+            
+            statsContainer.innerHTML = stats.map(stat => `
+                <div class="stat-card">
+                    <h4>${stat.title}</h4>
+                    <div class="value">${stat.value}</div>
+                </div>
+            `).join('');
+        }
+        
+        // Gráfico IPC
+        function createIPCChart() {
+            const ctx = document.getElementById('ipcChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.ipc.map(item => item.año),
+                    datasets: [{
+                        label: 'Variación IPC (%)',
+                        data: data.ipc.map(item => item.valor),
+                        borderColor: '#e74c3c',
+                        backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                        borderWidth: 3,
+                        pointBackgroundColor: '#e74c3c',
+                        pointBorderWidth: 2,
+                        pointRadius: 5,
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {display: false}
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {display: true, text: 'Inflación (%)'},
+                            grid: {color: 'rgba(0,0,0,0.1)'}
+                        },
+                        x: {
+                            title: {display: true, text: 'Año'},
+                            grid: {color: 'rgba(0,0,0,0.1)'}
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Gráfico Canasta Básica
+        function createCanastaChart() {
+            const ctx = document.getElementById('canastaChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.canasta.map(item => item.año),
+                    datasets: [{
+                        label: 'Canasta Alimentaria',
+                        data: data.canasta.map(item => item.alimentaria),
+                        borderColor: '#f39c12',
+                        backgroundColor: 'rgba(243, 156, 18, 0.1)',
+                        borderWidth: 2,
+                        fill: false
+                    }, {
+                        label: 'Canasta Total',
+                        data: data.canasta.map(item => item.total),
+                        borderColor: '#3498db',
+                        backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                        borderWidth: 3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {display: true, text: 'Costo (S/ per cápita)'}
+                        },
+                        x: {
+                            title: {display: true, text: 'Año'}
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Gráfico RMV vs Canasta
+        function createRMVCanastaChart() {
+            const ctx = document.getElementById('rmvCanastaChart').getContext('2d');
+            
+            // Crear datos para RMV interpolados
+            const rmvData = [];
+            const canastaFamiliar = []; // Canasta para familia de 4
+            
+            data.canasta.forEach(item => {
+                let rmv = 580; // valor base
+                if (item.año >= 2012) rmv = 750;
+                if (item.año >= 2016) rmv = 850;
+                if (item.año >= 2018) rmv = 930;
+                if (item.año >= 2022) rmv = 1025;
+                
+                rmvData.push(rmv);
+                canastaFamiliar.push(item.total * 4); // Para familia de 4 personas
+            });
+            
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.canasta.map(item => item.año),
+                    datasets: [{
+                        label: 'RMV Mensual',
+                        data: rmvData,
+                        borderColor: '#27ae60',
+                        backgroundColor: 'rgba(39, 174, 96, 0.1)',
+                        borderWidth: 3,
+                        stepped: true
+                    }, {
+                        label: 'Canasta Familiar (4 personas)',
+                        data: canastaFamiliar,
+                        borderColor: '#e74c3c',
+                        backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                        borderWidth: 3,
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {display: true, text: 'Soles (S/)'}
+                        },
+                        x: {
+                            title: {display: true, text: 'Año'}
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Gráfico de Pobreza
+        function createPobrezaChart() {
+            const ctx = document.getElementById('pobrezaChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.pobreza.map(item => item.año),
+                    datasets: [{
+                        label: 'Pobreza Monetaria',
+                        data: data.pobreza.map(item => item.monetaria),
+                        borderColor: '#e74c3c',
+                        backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                        borderWidth: 3,
+                        pointBackgroundColor: '#e74c3c',
+                        pointRadius: 4,
+                        fill: true
+                    }, {
+                        label: 'Pobreza Extrema',
+                        data: data.pobreza.map(item => item.extrema || 0),
+                        borderColor: '#8e44ad',
+                        backgroundColor: 'rgba(142, 68, 173, 0.1)',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#8e44ad',
+                        pointRadius: 3,
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 35,
+                            title: {display: true, text: 'Porcentaje de población (%)'}
+                        },
+                        x: {
+                            title: {display: true, text: 'Año'}
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Gráfico Tipo de Cambio
+        function createTipoCambioChart() {
+            const ctx = document.getElementById('tcChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.tipoCambio.map(item => item.año),
+                    datasets: [{
+                        label: 'USD/PEN',
+                        data: data.tipoCambio.map(item => item.valor),
+                        borderColor: '#f39c12',
+                        backgroundColor: 'rgba(243, 156, 18, 0.1)',
+                        borderWidth: 3,
+                        pointBackgroundColor: '#f39c12',
+                        pointRadius: 5,
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {display: false}
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            min: 2.5,
+                            max: 4.0,
+                            title: {display: true, text: 'Soles por Dólar'}
+                        },
+                        x: {
+                            title: {display: true, text: 'Año'}
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Gráfico Deciles de Ingresos
+        function createDecilesChart() {
+            const ctx = document.getElementById('decilesChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7', 'D8', 'D9', 'D10'],
+                    datasets: [{
+                        label: 'Ingreso Mensual (S/)',
+                        data: data.deciles2023,
+                        backgroundColor: [
+                            '#e74c3c', '#e67e22', '#f39c12', '#f1c40f', '#2ecc71',
+                            '#1abc9c', '#3498db', '#9b59b6', '#34495e', '#2c3e50'
+                        ],
+                        borderColor: '#2c3e50',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {display: false}
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {display: true, text: 'Ingreso Mensual (S/)'}
+                        },
+                        x: {
+                            title: {display: true, text: 'Deciles de Población'}
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Inicializar todos los gráficos al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            createSummaryStats();
+            createIPCChart();
+            createCanastaChart();
+            createRMVCanastaChart();
+            createPobrezaChart();
+            createTipoCambioChart();
+            createDecilesChart();
+        });
+    </script>
+</body>
+</html>

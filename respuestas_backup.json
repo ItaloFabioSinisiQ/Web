@@ -1,0 +1,37 @@
+[
+  {
+    "pregunta": "proyectos",
+    "respuesta": "¡Claro! Echa un vistazo a mi sección de proyectos. Ahí muestro mis creaciones más cool. 😉",
+    "keywords": ["proyectos", "trabajos", "portafolio", "muestrame tu trabajo"]
+  },
+  {
+    "pregunta": "habilidades",
+    "respuesta": "Mis superpoderes están en la sección de Habilidades. ¡Prepárate para ver el arsenal tecnológico! 🚀",
+    "keywords": ["habilidades", "skills", "tecnologias", "que sabes hacer"]
+  },
+  {
+    "pregunta": "contacto",
+    "respuesta": "¿Quieres charlar o colaborar? ¡Genial! Puedes encontrarme en la sección de Contacto o usar mis redes sociales. ¡No muerdo! (a menos que seas un bug) 😉",
+    "keywords": ["contacto", "hablar", "email", "telefono", "redes sociales", "colaborar"]
+  },
+  {
+    "pregunta": "experiencia",
+    "respuesta": "Mi viaje profesional está en la sección de Experiencia Laboral. ¡Algunas batallas ganadas y mucho código escrito!", 
+    "keywords": ["experiencia", "laboral", "trabajo", "donde has trabajado", "historial"]
+  },
+  {
+    "pregunta": "formacion",
+    "respuesta": "Mi cerebro fue entrenado en la sección de Formación. ¡Siempre aprendiendo cosas nuevas para no quedarme atrás! 🧠",
+    "keywords": ["formacion", "educacion", "estudios", "certificaciones", "aprendido"]
+  },
+    {
+    "pregunta": "quien eres",
+    "respuesta": "Soy [Tu Nombre], un desarrollador web full stack apasionado por crear cosas increíbles en internet. ¡Pero en el fondo soy solo un humano con mucha cafeína! 😁",
+    "keywords": ["quien eres", "eres", "sobre ti", "presentate", "cuentame de ti"]
+  },
+    {
+    "pregunta": "hola",
+    "respuesta": "¡Hola! ¿En qué puedo ayudarte hoy?",
+    "keywords": ["hola", "que tal", "buenas", "hey"]
+  }
+] 
