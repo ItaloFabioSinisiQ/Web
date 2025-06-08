@@ -1,37 +1,325 @@
 [
   {
     "pregunta": "proyectos",
-    "respuesta": "¡Claro! Echa un vistazo a mi sección de proyectos. Ahí muestro mis creaciones más cool. 😉",
-    "keywords": ["proyectos", "trabajos", "portafolio", "muestrame tu trabajo"]
+    "respuesta": "¡Con gusto te cuento sobre mis proyectos! 🚀 He desarrollado varios proyectos interesantes, incluyendo:\n\n1. Un sistema de análisis de datos para Pizza Hut que aumentó las conversiones en 15%\n2. Un descargador universal de contenido en Python\n3. Integraciones con IA usando Gemini API y GPTs\n4. Dashboards interactivos en Power BI\n\nMi enfoque siempre es crear soluciones que no solo funcionen bien, sino que también ofrezcan una experiencia excepcional. ¿Te gustaría conocer más detalles sobre alguno de estos proyectos? 😊",
+    "keywords": [
+      "proyectos", "proyetos", "pryectos", "proyektos", "projektos",
+      "trabajos", "travjos", "trabahos", "trabajoz", "travajoz",
+      "portafolio", "portaflio", "porfolio", "portflio", "portafolyo",
+      "muestrame tu trabajo", "muestrame tus trabajos", "muestra tu trabajo",
+      "que has hecho", "k has hecho", "que as hecho", "q has hecho",
+      "desarrollos", "desarollos", "desarrolos", "dezarrollos",
+      "obras", "creaciones", "realizaciones", "implementaciones",
+      "aplicaciones", "aplicasiones", "apps", "sistemas",
+      "soluciones", "solusiones", "programas", "software",
+      "codigo", "codigos", "programming", "programacion",
+      "muestrame", "muestram", "enseñame", "dime sobre",
+      "cuentame sobre", "cuales son", "portfolio", "github",
+      "repositorios", "repos", "ejemplos", "demos"
+    ]
   },
   {
     "pregunta": "habilidades",
-    "respuesta": "Mis superpoderes están en la sección de Habilidades. ¡Prepárate para ver el arsenal tecnológico! 🚀",
-    "keywords": ["habilidades", "skills", "tecnologias", "que sabes hacer"]
+    "respuesta": "¡Mi arsenal tecnológico es bastante completo! 💻\n\nFrontend: React, HTML5, CSS3, JavaScript\nBackend: Node.js, Python (Flask)\nBases de Datos: SQL, MongoDB\nAnálisis de Datos: Power BI, Tableau, Python (Pandas, Scikit-learn)\nCloud: AWS, GCP, Azure\nDevOps: Docker, Linux, CI/CD\n\nTambién tengo experiencia en:\n- Genesys Cloud para análisis de call center\n- SCRUM y metodologías ágiles\n- ETL/ELT con Databricks\n\n¿Hay alguna tecnología específica sobre la que te gustaría profundizar? 🤔",
+    "keywords": [
+      "habilidades", "abilidades", "habiliddes", "avilities", "skills",
+      "tecnologias", "tecnolojias", "tecnologías", "tecnolojías", "tech",
+      "que sabes hacer", "k sabes hacer", "que sabes", "q sabes hacer",
+      "herramientas", "eramientas", "herramientas", "tools",
+      "lenguajes", "lengajes", "languages", "programacion",
+      "stack", "stak", "tecnológico", "tecnologico", "arsenal",
+      "conocimientos", "conosimientos", "conocimientoz", "saberes",
+      "competencias", "conpetencias", "expertise", "experience",
+      "capacidades", "capasidades", "destrezas", "destresas",
+      "frontend", "front-end", "front end", "backend", "back-end",
+      "fullstack", "full-stack", "full stack", "desarrollo",
+      "programar", "programacion", "coding", "code",
+      "frameworks", "librerias", "libraries", "database",
+      "bases de datos", "bd", "sql", "nosql", "cloud",
+      "nube", "devops", "dev ops", "metodologias", "agiles",
+      "scrum", "kanban", "git", "version control"
+    ]
   },
   {
     "pregunta": "contacto",
-    "respuesta": "¿Quieres charlar o colaborar? ¡Genial! Puedes encontrarme en la sección de Contacto o usar mis redes sociales. ¡No muerdo! (a menos que seas un bug) 😉",
-    "keywords": ["contacto", "hablar", "email", "telefono", "redes sociales", "colaborar"]
+    "respuesta": "¡Me encanta conectar con otros profesionales! 📱\n\nPuedes contactarme por:\n- Email: sinisiquintanaitalo@gmail.com\n- Teléfono: (+51) 977170609\n- LinkedIn: linkedin.com/in/italo-fabio-sinisi-quintana\n\nEstoy disponible para:\n- Colaboraciones en proyectos\n- Consultorías técnicas\n- Charlas sobre tecnología\n- Networking profesional\n\n¡No dudes en escribirme! Respondo rápido y siempre estoy abierto a nuevas oportunidades. 😊",
+    "keywords": [
+      "contacto", "kontacto", "contactar", "kontactar", "contact",
+      "hablar", "avlar", "ablar", "conversar", "konversar",
+      "email", "mail", "correo", "coreo", "e-mail", "emeil",
+      "telefono", "telefon", "teléfono", "celular", "selular",
+      "redes sociales", "redes", "social media", "linkedin",
+      "colaborar", "kolaborar", "colaboracion", "colaborasion",
+      "conectemos", "konectemos", "conectar", "konectar",
+      "comunicar", "komunikar", "comunicarse", "komunikarse",
+      "escribir", "eskribir", "mensaje", "mensage", "mensajes",
+      "llamar", "yamar", "contactarme", "kontactarme",
+      "escribeme", "eskribeme", "escríbeme", "eskríveme",
+      "numero", "numeros", "whatsapp", "wsp", "wa",
+      "disponible", "disponivle", "availability", "horarios",
+      "networking", "network", "profesional", "profesionall",
+      "oportunidades", "oportunidadez", "trabajo", "empleo",
+      "consultoria", "konsultoria", "asesoría", "asesorya"
+    ]
   },
   {
     "pregunta": "experiencia",
-    "respuesta": "Mi viaje profesional está en la sección de Experiencia Laboral. ¡Algunas batallas ganadas y mucho código escrito!", 
-    "keywords": ["experiencia", "laboral", "trabajo", "donde has trabajado", "historial"]
+    "respuesta": "Mi experiencia profesional es bastante diversa y enriquecedora! 💼\n\n1. UBYCALL – Pizza Hut Salvador (2023-2024)\n   - Analista De Datos Call Center\n   - Desarrollo de dashboards en Power BI\n   - Implementación de KPIs (+15% conversiones)\n\n2. ALFIN BANCO (2022)\n   - Análisis Financiero\n   - Modelos de riesgo en Excel\n   - Automatización con Python\n\n3. Gestión Inmobiliaria Pacífico S.A.C. (2021-2022)\n   - Asistente de Administración\n   - Optimización de procesos\n   - Bases de datos SQL\n\n¿Te gustaría conocer más detalles sobre alguna de estas experiencias? 🤔",
+    "keywords": [
+      "experiencia", "eksperiencia", "experiensya", "experience",
+      "laboral", "lavoral", "trabajo", "travajo", "empleo",
+      "donde has trabajado", "dond has trabajado", "donde trabajaste",
+      "historial", "istorial", "history", "carrera", "karera",
+      "empresas", "enpresas", "companies", "organizaciones",
+      "profesional", "profesionall", "cv", "curriculum",
+      "trayectoria", "trayektorya", "background", "bakground",
+      "puesto", "puestos", "cargo", "cargos", "posicion",
+      "posiciones", "roles", "rol", "funciones", "funsiones",
+      "responsabilidades", "responsavilidades", "duties",
+      "logros", "logros", "achievements", "resultados",
+      "años", "anyos", "tiempo", "duracion", "durasion",
+      "anteriores", "anteriores", "previos", "prevyos",
+      "actuales", "aktuales", "recientes", "resientes",
+      "pizza hut", "piza hut", "ubycall", "alfin banco",
+      "inmobiliaria", "inmoviliaria", "pacifico", "pasifiko",
+      "analista", "analizta", "analyst", "datos", "datoz",
+      "call center", "col center", "dashboards", "kpis"
+    ]
   },
   {
     "pregunta": "formacion",
-    "respuesta": "Mi cerebro fue entrenado en la sección de Formación. ¡Siempre aprendiendo cosas nuevas para no quedarme atrás! 🧠",
-    "keywords": ["formacion", "educacion", "estudios", "certificaciones", "aprendido"]
+    "respuesta": "Mi formación es una combinación de educación formal y aprendizaje continuo! 📚\n\nEducación:\n- SENCICO: Administración de Obras de Construcción Civil\n\nCertificaciones:\n- SCRUM\n- Genesys Cloud\n\nCursos EDTEAM:\n- Python\n- SQL\n- Análisis de Datos\n- Power BI\n\nMe mantengo actualizado constantemente con cursos y bootcamps. ¿Te interesa saber más sobre algún área específica? 🧠",
+    "keywords": [
+      "formacion", "formasion", "formación", "formasión", "education",
+      "educacion", "edukacion", "educación", "edukasión", "estudios",
+      "estudio", "estudyos", "studies", "aprendido", "aprendizaje",
+      "certificaciones", "sertifikaciones", "certifications", "cert",
+      "cursos", "kursos", "courses", "curso", "kurso",
+      "diplomas", "titulos", "títulos", "titulez", "degrees",
+      "universidad", "universida", "uni", "college", "instituto",
+      "academia", "akademya", "bootcamp", "bootcamps", "workshop",
+      "capacitacion", "kapasitacion", "capacitación", "kapasitasión",
+      "entrenamiento", "entrenamento", "training", "seminarios",
+      "sencico", "sensiko", "construccion", "konstrukcion",
+      "civil", "sivil", "administracion", "administrasion",
+      "scrum", "skrum", "agile", "agil", "metodologias",
+      "genesys", "jenesys", "cloud", "kloud", "edteam",
+      "python", "pyton", "piton", "sql", "power bi",
+      "power by", "análisis", "analisis", "datos", "datoz",
+      "actualizado", "aktualisado", "continuo", "kontinuo"
+    ]
   },
-    {
+  {
     "pregunta": "quien eres",
-    "respuesta": "Soy [Tu Nombre], un desarrollador web full stack apasionado por crear cosas increíbles en internet. ¡Pero en el fondo soy solo un humano con mucha cafeína! 😁",
-    "keywords": ["quien eres", "eres", "sobre ti", "presentate", "cuentame de ti"]
+    "respuesta": "¡Hola! Soy Ítalo Fabio Sinisi Quintana 👋\n\nSoy un Full-Stack Developer & Data Analyst con más de 3 años de experiencia. Me especializo en:\n- Desarrollo web (React, Node.js)\n- Análisis de datos (Power BI, Python)\n- Automatización y business intelligence\n\nMi enfoque combina habilidades técnicas sólidas con una mente analítica y creativa. Me apasiona crear soluciones que generen valor real para las empresas.\n\nCuando no estoy programando, disfruto aprendiendo nuevas tecnologías y compartiendo conocimiento con la comunidad tech. ¿Te gustaría conocer más sobre mi enfoque del desarrollo? 😊",
+    "keywords": [
+      "quien eres", "kien eres", "quién eres", "kién eres", "who are you",
+      "eres", "erez", "sobre ti", "sover ti", "about you",
+      "presentate", "presentat", "preséntate", "presenta-te",
+      "cuentame de ti", "kuentame de ti", "cuéntame de ti",
+      "personalidad", "personalida", "personality", "perfil",
+      "biografia", "viografia", "biografía", "vyografía", "bio",
+      "italo", "ytalo", "ítalo", "ytalo", "sinisi", "sisini",
+      "quintana", "kintana", "fabio", "favyo", "full stack",
+      "fullstack", "full-stack", "developer", "desarrollador",
+      "data analyst", "analista", "analizta", "programador",
+      "especializo", "espesializo", "especialista", "espesialista",
+      "enfoque", "enfok", "approach", "filosofia", "filosofía",
+      "metodologia", "metodolojia", "metodología", "metodolojía",
+      "pasion", "pasyón", "pasión", "pasyón", "passion",
+      "creativo", "kreatibo", "creative", "analitico", "analítiko",
+      "soluciones", "solusiones", "solutions", "valor", "balor",
+      "empresas", "enpresas", "companies", "tecnologias",
+      "comunidad", "komunidad", "community", "tech", "tek"
+    ]
   },
-    {
+  {
     "pregunta": "hola",
-    "respuesta": "¡Hola! ¿En qué puedo ayudarte hoy?",
-    "keywords": ["hola", "que tal", "buenas", "hey"]
-  }
+    "respuesta": "¡Hola! 👋 Soy Ítalo, tu asistente virtual. Estoy aquí para ayudarte con cualquier consulta sobre desarrollo web, análisis de datos o tecnología en general. ¿En qué puedo asistirte hoy? Estoy listo para compartir conocimientos, resolver dudas o simplemente charlar sobre el mundo tech. ¡No dudes en preguntar! 😊",
+    "keywords": [
+      "hola", "ola", "hello", "helo", "hi", "hy", "hey", "ey",
+      "que tal", "k tal", "qué tal", "k tal", "how are you",
+      "buenas", "wenas", "good", "gud", "saludos", "saludoz",
+      "buenos dias", "buenos días", "wenos dias", "good morning",
+      "buenas tardes", "wenas tardes", "good afternoon",
+      "buenas noches", "wenas noches", "good evening", "good night",
+      "como estas", "komo estas", "cómo estás", "kómo estás",
+      "que pasa", "k pasa", "qué pasa", "k pasa", "whats up",
+      "como va", "komo va", "cómo va", "kómo va", "how is it going",
+      "que hay", "k hay", "qué hay", "k hay", "wassup",
+      "holaa", "holaaaa", "hooola", "hoooolaa", "hellooo",
+      "hiiii", "heyyy", "eyyyy", "que ondaaa", "k ondaaa"
+    ]
+  },
+  {
+    "pregunta": "servicios",
+    "respuesta": "¡Ofrezco varios servicios profesionales! 🛠️\n\n1. Desarrollo Web:\n   - Aplicaciones web con React y Node.js\n   - APIs RESTful\n   - Integraciones con bases de datos\n\n2. Análisis de Datos:\n   - Dashboards en Power BI y Tableau\n   - ETL/ELT con Databricks\n   - Análisis predictivo con Python\n\n3. Consultoría:\n   - Optimización de procesos\n   - Implementación de KPIs\n   - Automatización de tareas\n\n¿Te gustaría conocer más detalles sobre alguno de estos servicios? 🤔",
+    "keywords": [
+      "servicios", "servisios", "services", "servises", "que ofreces",
+      "k ofreces", "qué ofreces", "k ofreses", "what do you offer",
+      "que haces", "k ases", "qué haces", "k ases", "what do you do",
+      "servicios que brindas", "servisios k brindas", "que puedes hacer",
+      "k puedes aser", "qué puedes hacer", "k puedes aser",
+      "ayuda", "ayudar", "ayudas", "help", "assistance",
+      "consultoria", "konsultoria", "consultoría", "konsultoría",
+      "asesoría", "asesorya", "consulting", "konsulting",
+      "desarrollo", "desaroyo", "desarrollo", "development",
+      "programacion", "programasion", "programming", "coding",
+      "aplicaciones", "aplikasiones", "applications", "apps",
+      "web", "paginas", "websites", "sitios", "sytyos",
+      "analisis", "analiiz", "análisis", "analíysis", "data",
+      "datos", "datoz", "dashboards", "reportes", "reports",
+      "automatizacion", "automatisasion", "automation",
+      "optimizacion", "optimisasion", "optimization", "mejoras",
+      "eficiencia", "efisiencia", "efficiency", "procesos",
+      "prosesos", "processes", "implementacion", "implementasion",
+      "freelance", "freelans", "trabajo", "proyectos", "contratar"
+    ]
+  },
+  {
+    "pregunta": "saludo_tarde",
+    "respuesta": "¡Buenas tardes! 🌅 Espero que estés teniendo un excelente día. Soy Ítalo, desarrollador full-stack y analista de datos. ¿En qué puedo ayudarte esta tarde? Ya sea que necesites información sobre desarrollo web, análisis de datos, o simplemente quieras charlar sobre tecnología, estoy aquí para asistirte. ¡Dime en qué puedo ser útil! 😊",
+    "keywords": [
+      "buenas tardes", "wenas tardes", "good afternoon", "gud afternoon",
+      "tarde", "good evening", "atardecer", "por la tarde",
+      "esta tarde", "buenas", "wenas", "tardes", "tarde"
+    ]
+  },
+  {
+    "pregunta": "saludo_noche",
+    "respuesta": "¡Buenas noches! 🌙 Es un placer saludarte en esta noche. Soy Ítalo, tu asistente virtual especializado en desarrollo y análisis de datos. Aunque sea tarde, estoy aquí para ayudarte con cualquier consulta tecnológica que tengas. ¿Hay algo específico en lo que pueda asistirte esta noche? 😊",
+    "keywords": [
+      "buenas noches", "wenas noches", "good night", "gud night",
+      "noche", "noches", "por la noche", "esta noche",
+      "good evening", "evening", "anochecer"
+    ]
+  },
+  {
+    "pregunta": "despedida",
+    "respuesta": "¡Ha sido un placer conversar contigo! 👋 Espero haber sido de ayuda. Recuerda que siempre puedes contactarme si necesitas asistencia con desarrollo web, análisis de datos o cualquier consulta tecnológica. ¡Que tengas un excelente día/tarde/noche! Nos vemos pronto. 😊✨",
+    "keywords": [
+      "adios", "adiós", "adyos", "bye", "goodbye", "gud bye",
+      "nos vemos", "noz vemos", "see you", "hasta luego",
+      "asta luego", "see you later", "chau", "chao", "ciao",
+      "hasta pronto", "asta pronto", "see you soon", "gracias",
+      "grasias", "thank you", "thanks", "nos hablamos",
+      "noz ablamos", "talk to you later", "me voy", "me boy",
+      "tengo que irme", "i have to go", "hasta la vista",
+      "asta la vista", "catch you later"
+    ]
+  },
+  {
+    "pregunta": "react",
+    "respuesta": "¡React es una de mis tecnologías favoritas! ⚛️ Tengo amplia experiencia desarrollando aplicaciones con React, incluyendo:\n\n- Componentes funcionales y hooks\n- Estado global con Context API y Redux\n- React Router para navegación\n- Integración con APIs RESTful\n- Optimización de rendimiento\n- Testing con Jest y React Testing Library\n\nHe utilizado React en varios proyectos, desde dashboards interactivos hasta aplicaciones web completas. ¿Te interesa algún aspecto específico de React? 🤔",
+    "keywords": [
+      "react", "reakt", "reactjs", "react.js", "jsx", "hooks",
+      "componentes", "komponentes", "components", "estado",
+      "state", "props", "context", "redux", "router",
+      "navegacion", "navegasion", "frontend", "front-end",
+      "libreria", "library", "framework", "javascript",
+      "typescript", "ts", "rendering", "virtual dom"
+    ]
+  },
+  {
+    "pregunta": "python",
+    "respuesta": "¡Python es mi lenguaje de programación favorito para análisis de datos! 🐍 Tengo experiencia sólida en:\n\n- Análisis de datos con Pandas y NumPy\n- Visualización con Matplotlib y Seaborn\n- Machine Learning con Scikit-learn\n- Automatización de procesos\n- Web scraping con BeautifulSoup\n- APIs con Flask y FastAPI\n- ETL/ELT para pipelines de datos\n\nLo he usado en proyectos reales como automatización bancaria y análisis predictivo. ¿Hay alguna aplicación específica de Python que te interese? 🤔",
+    "keywords": [
+      "python", "piton", "pyton", "py", "pandas", "numpy",
+      "matplotlib", "seaborn", "scikit-learn", "sklearn",
+      "flask", "fastapi", "django", "automatizacion",
+      "automation", "scraping", "web scraping", "beautifulsoup",
+      "machine learning", "ml", "data science", "ciencia de datos",
+      "analisis", "análisis", "datos", "datoz", "etl", "elt",
+      "pipelines", "jupyter", "notebook", "colab"
+    ]
+  },
+  {
+    "pregunta": "nodejs",
+    "respuesta": "¡Node.js es mi herramienta principal para el backend! 🟢 Mi experiencia incluye:\n\n- APIs RESTful con Express.js\n- Bases de datos con MongoDB y SQL\n- Autenticación JWT y OAuth\n- Middleware personalizado\n- Manejo de archivos y uploads\n- WebSockets para tiempo real\n- Integración con servicios cloud\n- Testing con Jest y Mocha\n\nHe desarrollado varios backends robustos y escalables. ¿Te interesa conocer sobre algún aspecto específico de Node.js? 🤔",
+    "keywords": [
+      "nodejs", "node.js", "node js", "nod js", "express",
+      "ekspres", "expressjs", "express.js", "backend",
+      "back-end", "servidor", "server", "api", "rest",
+      "restful", "mongodb", "mongo", "jwt", "json web token",
+      "oauth", "middleware", "websockets", "sockets",
+      "npm", "yarn", "package", "paquetes", "javascript",
+      "js", "runtime", "v8", "asynchronous", "asincrono"
+    ]
+  },
+  {
+    "pregunta": "sql",
+    "respuesta": "¡SQL es fundamental en mi trabajo diario! 📊 Tengo experiencia sólida en:\n\n- Consultas complejas y optimización\n- Joins, subconsultas y CTEs\n- Procedimientos almacenados\n- Triggers y funciones\n- Modelado de bases de datos\n- MySQL, PostgreSQL, SQL Server\n- Análisis de rendimiento\n- ETL con SQL\n\nLo uso constantemente para análisis de datos y reporting. ¿Hay algún aspecto específico de SQL que te interese? 🤔",
+    "keywords": [
+      "sql", "sequel", "database", "base de datos", "bd",
+      "mysql", "postgresql", "postgres", "sql server",
+      "oracle", "sqlite", "consultas", "konsultas", "queries",
+      "select", "insert", "update", "delete", "join",
+      "inner join", "left join", "right join", "full join",
+      "subquery", "subconsulta", "cte", "stored procedure",
+      "procedimiento", "trigger", "funcion", "function",
+      "index", "indice", "foreign key", "primary key",
+      "normalizacion", "normalization", "relacional"
+    ]
+  },
+  {
+    "pregunta": "powerbi",
+    "respuesta": "¡Power BI es mi herramienta estrella para visualización de datos! 📈 Mi experiencia incluye:\n\n- Dashboards interactivos y KPIs\n- Modelado de datos con DAX\n- Conexiones a múltiples fuentes\n- Reportes automatizados\n- Power Query para ETL\n- Medidas calculadas avanzadas\n- Row Level Security (RLS)\n- Integración con SharePoint y Teams\n\nEn Pizza Hut logré aumentar conversiones 15% con mis dashboards. ¿Te interesa algún aspecto específico de Power BI? 🤔",
+    "keywords": [
+      "power bi", "powerbi", "power by", "microsoft", "dax",
+      "power query", "dashboards", "dashboard", "kpis",
+      "kpi", "visualizacion", "visualización", "charts",
+      "graficos", "gráficos", "reportes", "reports",
+      "business intelligence", "bi", "analytics", "analitica",
+      "datos", "data", "medidas", "measures", "columnas",
+      "tablas", "relationships", "relaciones", "filtros",
+      "slicers", "segmentadores", "rls", "security"
+    ]
+  },
+  {
+    "pregunta": "precios",
+    "respuesta": "¡Excelente pregunta sobre inversión en tecnología! 💰 Mis tarifas son competitivas y se adaptan al proyecto:\n\n🔹 Consultoría por hora: $25-40 USD\n🔹 Desarrollo web completo: Desde $800 USD\n🔹 Dashboard en Power BI: Desde $300 USD\n🔹 Automatización Python: Desde $200 USD\n🔹 Proyectos grandes: Cotización personalizada\n\nOfrezco:\n- Primera consulta gratuita (30 min)\n- Presupuestos sin compromiso\n- Garantía de satisfacción\n- Soporte post-entrega\n\n¿Te gustaría discutir tu proyecto específico? 😊",
+    "keywords": [
+      "precios", "presios", "precio", "presio", "costo", "kosto",
+      "cuanto cuesta", "kwanto kuesta", "cuánto cuesta", "kwánto kuesta",
+      "tarifas", "rates", "cotizacion", "kotisasion", "cotización",
+      "presupuesto", "presupueto", "budget", "inversion",
+      "inversión", "dinero", "pago", "payment", "cobras",
+      "cobrar", "charge", "fees", "honorarios", "onorarios",
+      "dolares", "dollars", "soles", "moneda", "currency",
+      "barato", "varato", "caro", "expensive", "cheap",
+      "economico", "económico", "affordable", "consulta",
+      "gratis", "free", "gratuito", "gratuyta"
+    ]
+  },
+  {
+    "pregunta": "disponibilidad",
+    "respuesta": "¡Tengo buena disponibilidad para nuevos proyectos! ⏰\n\n📅 Horarios:\n- Lunes a Viernes: 9:00 AM - 8:00 PM (GMT-5)\n- Sábados: 10:00 AM - 4:00 PM\n- Emergencias: Disponible con coordinación previa\n\n⚡ Tiempos de respuesta:\n- Email: Máximo 24 horas\n- WhatsApp: 2-4 horas\n- Proyectos urgentes: Coordinamos horarios especiales\n\nEstoy actualmente aceptando:\n- Proyectos de desarrollo web\n- Consultorías de análisis de datos\n- Automatizaciones\n\n¿Cuándo necesitarías comenzar? 😊",
+    "keywords": [
+      "disponibilidad", "disponibilida", "availability", "horarios",
+      "orarios", "schedule", "tiempo", "tyempo", "when",
+      "cuando", "kwando", "cuándo", "kwándo", "libre",
+      "ocupado", "busy", "available", "disponible",
+      "calendario", "kalendario", "agenda", "citas",
+      "reuniones", "meetings", "emergencia", "emergensya",
+      "urgente", "urgent", "rapido", "rápido", "fast",
+      "inmediato", "inmediato", "immediate", "ahora",
+      "now", "pronto", "soon", "esta semana", "próxima",
+      "timeline", "cronograma", "planning"
+    ]
+  },
+  {
+    "pregunta": "ubicacion",
+    "respuesta": "¡Estoy ubicado en Lima, Perú! 🇵🇪\n\n📍 Detalles de ubicación:\n- Ciudad: Lima, Lima Province\n- País: Perú\n- Zona horaria: GMT-5 (COT)\n- Trabajo: Remoto y presencial\n\n🌐 Modalidades de trabajo:\n- 100% remoto (preferido)\n- Presencial en Lima\n- Híbrido según necesidades\n- Colaboración internacional via online\n\n✈️ Viajes:\n- Disponible para proyectos importantes\n- Experiencia trabajando con equipos globales\n- Comunicación fluida en español e inglés\n\n¿Prefieres trabajo remoto o presencial? 😊",
+    "keywords": [
+      "ubicacion", "ubikasion", "ubicación", "ubikasión", "location",
+      "donde estas", "dond estas", "dónde estás", "dónd estás",
+      "lima", "peru", "perú", "sudamerica", "south america",
+      "pais", "país", "country", "ciudad", "syudad", "city",
+      "direccion", "direksion", "dirección", "direkión", "address",
+      "zona horaria", "timezone", "hora", "time", "gmt",
+      "remoto", "remote", "presencial", "presensyal", "onsite",
+      "oficina", "ofisina", "office", "trabajo", "modalidad",
+      "hibrido", "híbrido", "hybrid", "internacional",
+      "global", "equipos", "colaboracion"
+    },
 ] 
