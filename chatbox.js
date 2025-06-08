@@ -1,5 +1,5 @@
 // Configuración de la API de Gemini
-const GEMINI_API_KEY = 'AIzaSyAsjXWIqf5ecv4ZDjnAWSjr-zn_1nMMm4k'; // Reemplazar con tu API key
+const GEMINI_API_KEY = 'AIzaS'; // Reemplazar con tu API key
 const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
 
 // Configuración del chat
